@@ -9,7 +9,7 @@ componenten:
     [] homepage
     [] Navbar
     [] inlog
-    [] makeProfile
+    [] addProfile
     [] userDashboard 
     [] Tools
         [] addTool
