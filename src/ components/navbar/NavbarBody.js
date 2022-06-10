@@ -1,6 +1,6 @@
 // import './index.css';
 import { FaBeer } from 'react-icons/fa';
-import './navbar.module.css';
+import style from './NavbarBody.module.css';
 
 import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
