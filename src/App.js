@@ -1,6 +1,7 @@
 
 import './App.css';
-import NavbarBody from "./ components/navbar/NavbarBody";
+import NavbarBody from "./components/Navbar/NavbarBody";
+
 
 function App() {
   return (

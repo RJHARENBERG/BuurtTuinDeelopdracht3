@@ -32,7 +32,7 @@ a {
 }
 
 /* <ul> */
-.navbar-nav {
+.navbarNav {
     max-width: 100%;
     height: 100%;
     display: flex;
@@ -40,7 +40,7 @@ a {
 }
 
 /* <li> */
-.nav-item {
+.navItem {
     width: calc(var(--nav-size) * 0.8);
     display: flex;
     align-items: center;
@@ -48,7 +48,7 @@ a {
 }
 
 /* Icon Button */
-.icon-button {
+.iconButton {
     --button-size: calc(var(--nav-size) * 0.5);
     width: var(--button-size);
     height: var(--button-size);
@@ -62,11 +62,11 @@ a {
     transition: filter 300ms;
 }
 
-.icon-button:hover {
+.iconButton:hover {
     filter: brightness(1.2);
 }
 
-.icon-button svg {
+.iconButton svg {
     fill: var(--text-color);
     width: 20px;
     height: 20px;
@@ -92,7 +92,7 @@ a {
     width: 100%;
 }
 
-.menu-item {
+.menuItem {
     height: 50px;
     display: flex;
     align-items: center;
@@ -101,52 +101,20 @@ a {
     padding: 0.5rem;
 }
 
-.menu-item .icon-button {
+.menuItem .iconButton {
     margin-right: 0.5rem;
 }
 
 
-.menu-item .icon-button:hover {
+.menuItem .iconButton:hover {
     filter: none;
 }
 
-.menu-item:hover {
+.menuItem:hover {
     background-color: #525357;
 }
 
-.icon-right {
+.iconRight {
     margin-left: auto;
 }
 
-/* CSSTransition classes  */
-.menu-primary-enter {
-    position: absolute;
-    transform: translateX(-110%);
-}
-.menu-primary-enter-active {
-    transform: translateX(0%);
-    transition: all var(--speed) ease;
-}
-.menu-primary-exit {
-    position: absolute;
-}
-.menu-primary-exit-active {
-    transform: translateX(-110%);
-    transition: all var(--speed) ease;
-}
-
-
-.menu-secondary-enter {
-    transform: translateX(110%);
-}
-.menu-secondary-enter-active {
-    transform: translateX(0%);
-    transition: all var(--speed) ease;
-}
-.menu-secondary-exit {
-
-}
-.menu-secondary-exit-active {
-    transform: translateX(110%);
-    transition: all var(--speed) ease;
-}
