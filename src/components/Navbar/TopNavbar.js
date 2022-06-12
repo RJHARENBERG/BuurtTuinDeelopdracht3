@@ -1,9 +1,7 @@
-import {
-    FaRegBell, FaCaretDown, FaTools, FaCaretRight, FaBackward,
-    FaRegCalendarAlt, FaHandHolding, FaIdCard, FaRegCalendarPlus,
-    FaRegCalendarTimes
-} from 'react-icons/fa';
+import {FaRegBell, FaTools, FaRegCalendarAlt, FaHandHolding, FaIdCard,
+    FaRegCalendarPlus, FaRegCalendarTimes} from 'react-icons/fa';
 import {AiOutlineMessage} from "react-icons/ai";
+import {IoIosArrowBack, IoIosArrowDown, IoIosArrowForward} from "react-icons/io";
 
 import style from './NavbarBody.module.css';
 
@@ -16,7 +14,6 @@ function TopNavbar(props) {
     return (
 
         <Navbar>
-
             <Link to="/notifications" >
                 <NavItem icon={<FaRegBell/>}/>
             </Link>
@@ -24,7 +21,7 @@ function TopNavbar(props) {
                 <NavItem icon={<AiOutlineMessage/>}/>
             </Link>
 
-            <NavItem icon={<FaCaretDown/>}>
+            <NavItem icon={<IoIosArrowDown/>}>
                 <DropdownMenu></DropdownMenu>
             </NavItem>
         </Navbar>
@@ -95,13 +92,13 @@ function DropdownMenu() {
                     </Link>
                     <DropdownItem
                         leftIcon={<FaTools/>}
-                        rightIcon={<FaCaretRight/>}
+                        rightIcon={<IoIosArrowForward/>}
                         goToMenu="tools">
                         Tools
                     </DropdownItem>
                     <DropdownItem
                         leftIcon={<FaRegCalendarAlt/>}
-                        rightIcon={<FaCaretRight/>}
+                        rightIcon={<IoIosArrowForward/>}
                         goToMenu="projects">
                         Projecten
                     </DropdownItem>
@@ -115,7 +112,7 @@ function DropdownMenu() {
                 unmountOnExit
                 onEnter={calcHeight}>
                 <div className={style.menu}>
-                    <DropdownItem goToMenu="main" leftIcon={<FaBackward/>}>
+                    <DropdownItem goToMenu="main" leftIcon={<IoIosArrowBack/>}>
                         <h2>Gereedschap delen</h2>
                     </DropdownItem>
                     <Link to="/myTools">
@@ -137,7 +134,7 @@ function DropdownMenu() {
                 unmountOnExit
                 onEnter={calcHeight}>
                 <div className={style.menu}>
-                    <DropdownItem goToMenu="main" leftIcon={<FaBackward/>}>
+                    <DropdownItem goToMenu="main" leftIcon={<IoIosArrowBack/>}>
                         <h2>Buurt projecten</h2>
                     </DropdownItem>
                     <Link to="/allProjects">
@@ -149,7 +146,7 @@ function DropdownMenu() {
                     <Link to="/myOldProjects">
                         <DropdownItem leftIcon={<FaRegCalendarTimes/>}>Mijn oude projecten</DropdownItem>
                     </Link><Link to="/addProjects">
-                        <DropdownItem leftIcon={<FaRegCalendarTimes/>}>maak een project</DropdownItem>
+                        <DropdownItem leftIcon={<FaRegCalendarTimes/>}>Maak een project</DropdownItem>
                     </Link>
                 </div>
             </CSSTransition>
