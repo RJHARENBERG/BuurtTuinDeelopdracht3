@@ -1,24 +1,33 @@
-// import './index.css';
-import { FaPlus,FaRegBell,FaFacebookMessenger,FaCaretDown, FaTools ,FaCaretRight,FaBackward,FaRegCalendarAlt
-,FaHandHolding, FaIdCard, FaRegCalendarPlus, FaRegCalendarTimes } from 'react-icons/fa';
-import {AiOutlineLogin,AiOutlineLogout, AiOutlineMessage} from "react-icons/ai";
+import {
+    FaRegBell, FaCaretDown, FaTools, FaCaretRight, FaBackward,
+    FaRegCalendarAlt, FaHandHolding, FaIdCard, FaRegCalendarPlus,
+    FaRegCalendarTimes
+} from 'react-icons/fa';
+import {AiOutlineMessage} from "react-icons/ai";
+
 import style from './NavbarBody.module.css';
 
-import React, { useState, useEffect, useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React, {useState, useEffect, useRef} from 'react';
+import {CSSTransition} from 'react-transition-group';
+import {Link} from "react-router-dom";
 
-function NavbarBody(props) {
+function TopNavbar(props) {
+
     return (
 
-            <Navbar>
-                <NavItem icon={<AiOutlineLogout/>} />
-                <NavItem icon={<FaRegBell/>} />
-                <NavItem icon={<AiOutlineMessage/>} />
+        <Navbar>
 
-                <NavItem icon={<FaCaretDown/>}>
-                    <DropdownMenu></DropdownMenu>
-                </NavItem>
-            </Navbar>
+            <Link to="/notifications" >
+                <NavItem icon={<FaRegBell/>}/>
+            </Link>
+            <Link to="/messagesDashboard">
+                <NavItem icon={<AiOutlineMessage/>}/>
+            </Link>
+
+            <NavItem icon={<FaCaretDown/>}>
+                <DropdownMenu></DropdownMenu>
+            </NavItem>
+        </Navbar>
 
     );
 }
@@ -71,7 +80,7 @@ function DropdownMenu() {
 
     return (
         <div className={style.dropdown}
-             // style={{ height: menuHeight }}
+            // style={{ height: menuHeight }}
              ref={dropdownRef}>
 
             <CSSTransition
@@ -81,27 +90,26 @@ function DropdownMenu() {
                 unmountOnExit
                 onEnter={calcHeight}>
                 <div className={style.menu}>
-                    <DropdownItem
-                        leftIcon={<FaIdCard/>}
-                    >My Profile</DropdownItem>
+                    <Link to="myProfile">
+                        <DropdownItem leftIcon={<FaIdCard/>}>Mijn Profiel</DropdownItem>
+                    </Link>
                     <DropdownItem
                         leftIcon={<FaTools/>}
                         rightIcon={<FaCaretRight/>}
-                        goToMenu="settings">
+                        goToMenu="tools">
                         Tools
                     </DropdownItem>
                     <DropdownItem
                         leftIcon={<FaRegCalendarAlt/>}
                         rightIcon={<FaCaretRight/>}
-                        goToMenu="animals">
+                        goToMenu="projects">
                         Projecten
                     </DropdownItem>
-
                 </div>
             </CSSTransition>
 
             <CSSTransition
-                in={activeMenu === 'settings'}
+                in={activeMenu === 'tools'}
                 timeout={500}
                 classNames="menu-secondary"
                 unmountOnExit
@@ -110,14 +118,20 @@ function DropdownMenu() {
                     <DropdownItem goToMenu="main" leftIcon={<FaBackward/>}>
                         <h2>Gereedschap delen</h2>
                     </DropdownItem>
-                    <DropdownItem leftIcon={<FaTools/>}>Mijn gereedschap</DropdownItem>
-                    <DropdownItem leftIcon={<FaHandHolding/>}>Gereedschap lenen</DropdownItem>
-                    <DropdownItem leftIcon={<FaRegCalendarAlt/>}>Reserveringen</DropdownItem>
+                    <Link to="/myTools">
+                        <DropdownItem leftIcon={<FaTools/>}>Mijn gereedschap</DropdownItem>
+                    </Link>
+                    <Link to="/lendTool">
+                        <DropdownItem leftIcon={<FaHandHolding/>}>Gereedschap lenen</DropdownItem>
+                    </Link>
+                    <Link to="toolReservation">
+                        <DropdownItem leftIcon={<FaRegCalendarAlt/>}>Reserveringen</DropdownItem>
+                    </Link>
                 </div>
             </CSSTransition>
 
             <CSSTransition
-                in={activeMenu === 'animals'}
+                in={activeMenu === 'projects'}
                 timeout={500}
                 classNames="menu-secondary"
                 unmountOnExit
@@ -126,12 +140,21 @@ function DropdownMenu() {
                     <DropdownItem goToMenu="main" leftIcon={<FaBackward/>}>
                         <h2>Buurt projecten</h2>
                     </DropdownItem>
-                    <DropdownItem leftIcon={<FaRegCalendarAlt/>}>Alle projecten</DropdownItem>
-                    <DropdownItem leftIcon={<FaRegCalendarPlus/>}>Mijn aangemelde projecten</DropdownItem>
-                    <DropdownItem leftIcon={<FaRegCalendarTimes/>}>Mijn oude projecten</DropdownItem>
+                    <Link to="/allProjects">
+                        <DropdownItem leftIcon={<FaRegCalendarAlt/>}>Alle projecten</DropdownItem>
+                    </Link>
+                    <Link to="/myEnrolledProjects">
+                        <DropdownItem leftIcon={<FaRegCalendarPlus/>}>Mijn aangemelde projecten</DropdownItem>
+                    </Link>
+                    <Link to="/myOldProjects">
+                        <DropdownItem leftIcon={<FaRegCalendarTimes/>}>Mijn oude projecten</DropdownItem>
+                    </Link><Link to="/addProjects">
+                        <DropdownItem leftIcon={<FaRegCalendarTimes/>}>maak een project</DropdownItem>
+                    </Link>
                 </div>
             </CSSTransition>
         </div>
     );
 }
-export default NavbarBody;
+
+export default TopNavbar;
