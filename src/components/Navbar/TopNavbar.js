@@ -20,12 +20,10 @@ function TopNavbar(props) {
             <Link to="/messagesDashboard">
                 <NavItem icon={<AiOutlineMessage/>}/>
             </Link>
-
             <NavItem icon={<IoIosArrowDown/>}>
                 <DropdownMenu></DropdownMenu>
             </NavItem>
         </Navbar>
-
     );
 }
 

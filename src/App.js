@@ -13,6 +13,7 @@ import AllProjects from "./components/Projects/allProjects/AllProjects";
 import MyEnrolledProjects from "./components/Projects/myEnrolledProjects/myEnrolledProjects";
 import MyOldProjects from "./components/Projects/myOldProjects/MyOldProjects";
 import AddProjects from "./components/Projects/addProjects/AddProjects";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
 
                     <Route path={"/myTools"} component={MyTools}/>
                     <Route path="/lendTool" component={LendTool}/>
+
                     <Route path="/toolReservation" component={ToolReservation}/>
 
                     <Route path="/allProjects" component={AllProjects}/>
@@ -36,6 +38,7 @@ function App() {
                     <Route path="/myOldProjects" component={MyOldProjects}/>
                     <Route path="/addProjects" component={AddProjects}/>
                 </Switch>
+                <Footer/>
             </Router>
         </>
     );

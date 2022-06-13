@@ -1,0 +1,78 @@
+
+@import "../../../../index.css";
+
+.lenderToolHeader {
+    background-color: var(--green-background);
+    color: var(--accent-text);
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+
+.lenderToolHeaderContainer {
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0px 100px 0px;
+
+}
+
+.lenderToolHeaderList {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.lenderToolHeaderListItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lenderToolHeaderSearch {
+    height: 30px;
+    background-color: var(--white-background);
+    border: 3px solid var(--search-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    max-width: 1024px;
+}
+
+.lenderToolHeaderSearchItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lenderToolSearchIcon {
+    color: var(--text-color);
+}
+
+.lenderToolHeaderSearchInput{
+    border: none;
+    outline: none;
+}
+
+.lenderToolSearchText{
+    color: var(--text-color);
+}
+
+.lenderToolDate {
+    position: absolute;
+    top: 50px;
+    z-index: 2;
+
+}
+
+.lenderToolHeaderSearchButton{
+    border: none;
+    outline: none;
+    background-color: var(--white-background);
+    color: var(--text-color);
+}

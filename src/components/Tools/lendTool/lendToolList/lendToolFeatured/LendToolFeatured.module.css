@@ -1,0 +1,25 @@
+.lendToolFeatured{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 1;
+}
+.lendToolFeaturedItem{
+    position: relative;
+    color: var(--white-background);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 250px;
+}
+.lendToolFeaturedImg{
+    width: 100%;
+    object-fit: cover;
+}
+.lendToolFeaturedTitles{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+}

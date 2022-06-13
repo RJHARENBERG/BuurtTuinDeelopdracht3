@@ -1,0 +1,22 @@
+.lendToolFeaturedProperty{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.lendToolFeaturedPropertyItem{
+    flex: 1;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.LendToolFeaturedPropertyImg{
+    width: 100%;
+}
+.LendToolFeaturedPropertyTool{
+    font-weight: bold;
+}
+.LendToolFeaturedPropertyOwner{
+    font-weight: 300;
+}

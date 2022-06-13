@@ -7,13 +7,22 @@
 }
 
 :root{
-  --background: radial-gradient(circle, rgba(10,176,18,1) 0%, rgba(67,140,34,1) 100%);
-  --accent-text: #191970;
+  /*navbar color theme*/
+  --black-background:  #242526;
+  --bg-accent: #484a4d;
+  --text-color: #dadce1;
 
+  /*base color theme*/
+  /*--green-background: green;*/
+  --green-background: radial-gradient(circle, rgba(10,176,18,1) , rgba(67,140,34,1) 100%);
+  --white-background: white;
+  --white-text: white;
+  --search-border: orange;
+  --accent-text: #191970;
 
 }
 
-h1, h2, li{
+h1, h2, h3, p, li, span{
   font-family: 'lato', SansSerif;
 }
 
