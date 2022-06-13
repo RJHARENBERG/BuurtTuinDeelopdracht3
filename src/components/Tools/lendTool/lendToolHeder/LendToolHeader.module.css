@@ -57,16 +57,19 @@
 .lenderToolHeaderSearchInput{
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .lenderToolSearchText{
     color: var(--text-color);
+    cursor: pointer;
 }
 
 .lenderToolDate {
     position: absolute;
     top: 50px;
     z-index: 2;
+
 
 }
 
@@ -75,4 +78,5 @@
     outline: none;
     background-color: var(--white-background);
     color: var(--text-color);
+    cursor: pointer;
 }

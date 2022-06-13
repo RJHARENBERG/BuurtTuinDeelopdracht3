@@ -1,8 +1,11 @@
 .footer {
-    display: flex;
-    align-content: center;
+    text-align: center;
+    background-color: var(--black-background);
+    color: var(--text-color);
     width: 100%;
     max-widt: 1024px;
     font-size: 12px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    padding: 10px;
+    height: 100%;
 }

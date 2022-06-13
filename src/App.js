@@ -14,12 +14,13 @@ import MyEnrolledProjects from "./components/Projects/myEnrolledProjects/myEnrol
 import MyOldProjects from "./components/Projects/myOldProjects/MyOldProjects";
 import AddProjects from "./components/Projects/addProjects/AddProjects";
 import Footer from "./components/footer/Footer";
+import SearchLendTool from "./components/Tools/searchLendTool/SearchLendTool";
 
 
 function App() {
     return (
         <>
-            <Router>
+            {/*<Router>*/}
                 <TopNavbar/>
                 <Switch>
                     <Route exact path={"/"} component={Homepage}/>
@@ -30,7 +31,7 @@ function App() {
 
                     <Route path={"/myTools"} component={MyTools}/>
                     <Route path="/lendTool" component={LendTool}/>
-
+                    <Route path="/searchLendTool" component={SearchLendTool}/>
                     <Route path="/toolReservation" component={ToolReservation}/>
 
                     <Route path="/allProjects" component={AllProjects}/>
@@ -39,7 +40,7 @@ function App() {
                     <Route path="/addProjects" component={AddProjects}/>
                 </Switch>
                 <Footer/>
-            </Router>
+            {/*</Router>*/}
         </>
     );
 }

@@ -6,9 +6,11 @@ import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from "date-fns";
+import {useHistory} from "react-router-dom";
 
 
 function LendToolHeader(props) {
+    const [tool, setTool] =useState("")
     const [openDate, setOpenDate] =useState(false)
     const [date, setDate] = useState([
         {
@@ -17,6 +19,12 @@ function LendToolHeader(props) {
             key: 'selection'
         }
     ]);
+
+    let history = useHistory();
+    const handleSearch = ()=>{
+        history.push("/searchLendTool", {tool: tool,date: date})
+    }
+
     return (
         <>
             <div className={style.lenderToolHeader}>
@@ -38,6 +46,7 @@ function LendToolHeader(props) {
                                 type="text"
                                 placeholder="Wat voor gereedschap?"
                                 className={style.lenderToolHeaderSearchInput}
+                                onChange={e=>setTool(e.target.value)}
                             />
                         </div>
                         <div className={style.lenderToolHeaderSearchItem}>
@@ -50,10 +59,11 @@ function LendToolHeader(props) {
                                 moveRangeOnFirstSelection={false}
                                 ranges={date}
                                 className={style.lenderToolDate}
+                                minDate={new Date()}
                             />}
                         </div>
                         <div className={style.lenderToolHeaderSearchItem}>
-                            <button className={style.lenderToolHeaderSearchButton}><FaSearch/></button>
+                            <button className={style.lenderToolHeaderSearchButton} onClick={handleSearch}><FaSearch/></button>
                         </div>
                     </div>
                 </div>
