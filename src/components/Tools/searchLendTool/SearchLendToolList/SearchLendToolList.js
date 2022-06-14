@@ -16,7 +16,7 @@ function SearchLendToolList(props) {
 
     return (
         <div className={styles.lendToolList}>
-            <div className={styles.lendToolListContainer}>
+            <div className={styles.lendToolListSearchContainer}>
                 <div className={styles.lendToolListWrapper}>
                     <div className={styles.lendToolListSearch}>
                         <h1 className={styles.lendToolListTitle}>Search</h1>

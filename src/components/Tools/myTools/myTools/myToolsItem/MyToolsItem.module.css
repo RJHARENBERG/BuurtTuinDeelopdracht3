@@ -1,4 +1,4 @@
-.SearchLendToolItem {
+.MyToolsItem {
     border: 1px solid var(--itum-border);
     padding: 10px;
     border-radius: 5px;
@@ -9,38 +9,38 @@
     position: relative;
 }
 
-.SearchLendToolImg {
+.MyToolsItemImg {
     width: 200px;
     height: 200px;
     object-fit: cover;
 }
 
-.SearchLendToolDescription {
+.MyToolsItemDescription {
     display: flex;
     flex-direction: column;
     gap: 10px;
     flex: 2;
 }
 
-.SearchLendToolName {
+.MyToolsItemName {
     font-size: 20px;
     color: var(--itum-title-name);
     padding-bottom: 6px;
 }
 
-.SearchLendToolType {
+.MyToolsItemType {
     font-size: 16px;
     font-weight: bold;
 }
 
-.SearchLendToolOwner {
+.MyToolsItemOwner {
     font-weight: 300;
 }
 
-.SearchLendToolOwnerAdres {
+.MyToolsItemOwnerAdres {
     font-weight: 300;
 }
-.SearchLendToolLendAddButton{
+.MyToolsItemAddButton{
     border: none;
     background-color: #484a4d;
     color: var(--text-color);
@@ -60,25 +60,56 @@
     position: absolute;
     right: -25px;
 }
-.SearchLendToolLendAddButton:hover {
+.MyToolsItemAddButton:hover {
     filter: brightness(1.2);
 }
 
-.SearchLendToolLendAddButton svg {
+.MyToolsItemAddButton svg {
     fill: var(--text-color);
     width: 20px;
     height: 20px;
 }
 
-.SearchLendToolAboudTitle{
+.MyToolsItemDeleteButton{
+    border: none;
+    background-color: #484a4d;
+    color: var(--text-color);
+    cursor: pointer;
+
+    --button-size: calc(var(--nav-size) * 0.8);
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 300ms;
+
+    position: absolute;
+    right: -25px;
+    top: 150px;
+}
+.MyToolsItemDeleteButton:hover{
+    filter: brightness(1.2);
+}
+.MyToolsItemDeleteButton svg{
+    fill: var(--text-color);
+    width: 20px;
+    height: 20px;
+}
+
+
+.MyToolsItemTitle{
     font-size: 20px;
     color: var(--itum-title-name);
     padding-bottom: 10px;
 }
 
-.SearchLendToolAboud {
+.MyToolsItemAboud {
     flex: 2;
 }
 
-.SearchLendToolAboudText {
+.MyToolsItemAboudText {
 }

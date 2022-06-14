@@ -1,36 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:wght@200&family=Square+Peg&display=swap');
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-:root{
-  /*navbar color theme*/
-  --black-background:  #242526;
-  --bg-accent: #484a4d;
-  --text-color: #dadce1;
+:root {
+    /*navbar color theme*/
+    --black-background: #242526;
+    --bg-accent: #484a4d;
+    --text-color: #dadce1;
 
-  /*base color theme*/
-  /*--green-background: green;*/
-  --green-background: radial-gradient(circle, rgba(10,176,18,1) , rgba(67,140,34,1) 100%);
-  --white-background: white;
-  --white-text: white;
-  --search-border: orange;
-  --itum-border: lightgray;
-  --itum-title-name: #242526;
-  --accent-text: #191970;
+    /*base color theme*/
+    /*--green-background: green;*/
+    --green-background: radial-gradient(circle, rgba(10, 176, 18, 1), rgba(67, 140, 34, 1) 100%);
+    --white-background: white;
+    --white-text: white;
+    --search-border: orange;
+    --itum-border: #484a4d;
+    --itum-title-name: #242526;
+    --accent-text: #191970;
 
 }
 
-h1, h2, h3, p, li, span, label, button{
-  font-family: 'lato', SansSerif;
+h1, h2, h3, p, li, span, label, button {
+    font-family: 'lato', SansSerif;
 }
 
 main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 100px;
 }

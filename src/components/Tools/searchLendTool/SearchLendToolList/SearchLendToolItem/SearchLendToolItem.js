@@ -21,7 +21,7 @@ function SearchLendToolItem(props) {
                 <span className={style.SearchLendToolOwnerAdres}>
                     Adres: Kruidendreef 34
                 </span>
-                <button className={style.SearchLendToolLendButton}><FaPlus/></button>
+                <button className={style.SearchLendToolLendAddButton}><FaPlus/></button>
             </div>
             <div className={style.SearchLendToolAboud}>
                 <h2 className={style.SearchLendToolAboudTitle}>omschrijving:</h2>

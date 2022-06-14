@@ -19,9 +19,9 @@ function MyToolsList(props) {
         <div className={style.MyToolsList}>
             <div className={style.MyToolsListContainer}>
                 <div className={style.MyToolsListWrapper}>
+                   <div className={style.MyToolsListControl}>
                     <div className={style.MyToolsListSearch}>
-                        <h1 className={style.MyToolsListTitle}>Search</h1>
-
+                        <h1 className={style.MyToolsListSearchTitle}>Search</h1>
                         <div className={style.MyToolsListItem}>
                             <label>Type gereedschap</label>
                             <input type="text"
@@ -46,17 +46,23 @@ function MyToolsList(props) {
                             </div>
                             <button><FaSearch/></button>
                         </div>
-                        <div className={style.MyToolsListResult}>
-                            <MyToolsItem/>
-                            <MyToolsItem/>
-                            <MyToolsItem/>
-                            <MyToolsItem/>
-                            <MyToolsItem/>
-                            <MyToolsItem/>
-                            <MyToolsItem/>
-                            <MyToolsItem/>
-                            <MyToolsItem/>
-                        </div>
+                    </div>
+                       <div className={style.MyToolsListAddTool}>
+                           <h1 className={style.MyToolsListSearchAddToolTitle} >Uit lenen</h1>
+                       </div>
+
+                </div>
+
+                    <div className={style.MyToolsListResult}>
+                        <MyToolsItem/>
+                        <MyToolsItem/>
+                        <MyToolsItem/>
+                        <MyToolsItem/>
+                        <MyToolsItem/>
+                        <MyToolsItem/>
+                        <MyToolsItem/>
+                        <MyToolsItem/>
+                        <MyToolsItem/>
                     </div>
                 </div>
             </div>

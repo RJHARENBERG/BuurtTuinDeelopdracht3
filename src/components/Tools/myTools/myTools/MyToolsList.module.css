@@ -1,17 +1,26 @@
-.MyToolsList{}
-.MyToolsListContainer{
+.MyToolsList {
+}
+
+.MyToolsListContainer {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
-.MyToolsListWrapper{
+
+.MyToolsListWrapper {
     width: 100%;
     max-width: 1024px;
     display: flex;
     gap: 20px;
 }
-.MyToolsListSearch{
+
+.MyToolsListControl {
     flex: 1;
+}
+
+
+/*Search control=================*/
+.MyToolsListSearch {
     background-color: orange;
     /*background-color: var(--border);*/
     padding: 20px;
@@ -20,37 +29,40 @@
     top: 70px;
     height: max-content;
 }
-.MyToolsListItem>button{
+
+.MyToolsListItem > button {
     padding: 10px;
     background-color: var(--search-border);
-    color: var(--text-color);
+    color: var(--border);
     border: none;
     width: 100%;
     cursor: pointer;
 }
 
-.MyToolsListTitle{
+.MyToolsListSearchTitle {
     font-size: 20px;
-    color: var(--text-color);
+    color: var(--border);
     margin-bottom: 10px;
 }
-.MyToolsListItem{
+
+.MyToolsListItem {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-bottom: 10px;
 }
-.MyToolsListItem>label{
+
+.MyToolsListItem > label {
     font-size: 12px;
 }
 
-.MyToolsListItem>input{
+.MyToolsListItem > input {
     height: 30px;
     border: none;
     padding: 5px;
 }
 
-.MyToolsListItem>span{
+.MyToolsListItem > span {
     height: 30px;
     padding: 5px;
     background-color: var(--white-background);
@@ -59,12 +71,34 @@
     cursor: pointer;
 }
 
-.MyToolsListSearchInput{}
-.MyToolsListSearchText{
+.MyToolsListSearchInput {
+}
+
+.MyToolsListSearchText {
 
 }
-.MyToolsListDate{}
-.MyToolsListResult{
+
+.MyToolsListDate {
+}
+
+.MyToolsListResult {
     flex: 3
+}
+
+/*Add tool control ==========================*/
+.MyToolsListAddTool {
+    background-color: var(--black-background);
+    padding: 20px;
+    border-radius: 10px;
+    position: sticky;
+    top: 320px;
+    height: max-content;
+
+}
+
+.MyToolsListSearchAddToolTitle{
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 10px;
 }
 
