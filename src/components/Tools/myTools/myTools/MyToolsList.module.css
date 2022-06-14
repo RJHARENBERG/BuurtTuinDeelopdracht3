@@ -1,22 +1,16 @@
-
-.lendToolList {
-}
-
-
-.lendToolListContainer {
+.MyToolsList{}
+.MyToolsListContainer{
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
-
-.lendToolListWrapper {
+.MyToolsListWrapper{
     width: 100%;
     max-width: 1024px;
     display: flex;
     gap: 20px;
 }
-
-.lendToolListSearch {
+.MyToolsListSearch{
     flex: 1;
     background-color: orange;
     /*background-color: var(--border);*/
@@ -26,35 +20,37 @@
     top: 70px;
     height: max-content;
 }
+.MyToolsListItem>button{
+    padding: 10px;
+    background-color: var(--search-border);
+    color: var(--text-color);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
 
-.lendToolListTitle {
+.MyToolsListTitle{
     font-size: 20px;
     color: var(--text-color);
     margin-bottom: 10px;
 }
-
-.lendToolListResult {
-    flex: 3
-}
-
-.lendToolListItem {
+.MyToolsListItem{
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-bottom: 10px;
 }
-
-.lendToolListItem > label {
+.MyToolsListItem>label{
     font-size: 12px;
 }
 
-.lendToolListItem > input {
+.MyToolsListItem>input{
     height: 30px;
     border: none;
     padding: 5px;
 }
 
-.lendToolListItem > span {
+.MyToolsListItem>span{
     height: 30px;
     padding: 5px;
     background-color: var(--white-background);
@@ -63,12 +59,12 @@
     cursor: pointer;
 }
 
-.lendToolListSearch > button {
-    padding: 10px;
-    background-color: var(--search-border);
-    color: var(--text-color);
-    border: none;
-    width: 100%;
-    cursor: pointer;
+.MyToolsListSearchInput{}
+.MyToolsListSearchText{
 
 }
+.MyToolsListDate{}
+.MyToolsListResult{
+    flex: 3
+}
+

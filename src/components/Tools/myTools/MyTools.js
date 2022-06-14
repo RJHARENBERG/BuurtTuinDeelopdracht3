@@ -1,8 +1,12 @@
 import React from 'react';
+import style from "./MyTools.module.css"
+import MyToolsList from "./myTools/MyToolsList";
 
 function MyTools(props) {
     return (
-        <h1>Mijn gereedschap</h1>
+        <>
+            <MyToolsList/>
+        </>
     );
 }
 
