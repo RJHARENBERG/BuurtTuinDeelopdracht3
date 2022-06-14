@@ -18,11 +18,13 @@
   --white-background: white;
   --white-text: white;
   --search-border: orange;
+  --itum-border: lightgray;
+  --itum-title-name: #242526;
   --accent-text: #191970;
 
 }
 
-h1, h2, h3, p, li, span, label{
+h1, h2, h3, p, li, span, label, button{
   font-family: 'lato', SansSerif;
 }
 

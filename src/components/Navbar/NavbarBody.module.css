@@ -48,7 +48,7 @@ a {
 
 /* Icon Button */
 .iconButton {
-    --button-size: calc(var(--nav-size) * 0.5);
+    --button-size: calc(var(--nav-size) * 0.6);
     width: var(--button-size);
     height: var(--button-size);
     background-color: #484a4d;
@@ -59,6 +59,7 @@ a {
     align-items: center;
     justify-content: center;
     transition: filter 300ms;
+    border: none;
 }
 
 .iconButton:hover {
@@ -99,10 +100,15 @@ a {
     border-radius: var(--border-radius);
     transition: background var(--speed);
     padding: 0.5rem;
+    background-color: var(--black-background);
+    border: none;
+    color: var(--text-color);
+    font-size: 18px;
+    width: 100%;
 }
 
 .menuItem .iconButton {
-    margin-right: 0.5rem;
+    margin-right: 0.8rem;
 }
 
 

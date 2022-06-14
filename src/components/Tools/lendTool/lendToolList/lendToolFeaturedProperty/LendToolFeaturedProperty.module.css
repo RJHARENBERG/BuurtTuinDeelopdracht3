@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    cursor: pointer;
 }
 .lendToolFeaturedPropertyItem{
     flex: 1;
@@ -13,9 +14,11 @@
 }
 .LendToolFeaturedPropertyImg{
     width: 100%;
+
 }
 .LendToolFeaturedPropertyTool{
     font-weight: bold;
+
 }
 .LendToolFeaturedPropertyOwner{
     font-weight: 300;

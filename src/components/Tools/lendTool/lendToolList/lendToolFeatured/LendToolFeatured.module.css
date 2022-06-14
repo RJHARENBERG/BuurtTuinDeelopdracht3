@@ -12,10 +12,12 @@
     border-radius: 10px;
     overflow: hidden;
     height: 250px;
+    cursor: pointer;
 }
 .lendToolFeaturedImg{
     width: 100%;
     object-fit: cover;
+
 }
 .lendToolFeaturedTitles{
     position: absolute;

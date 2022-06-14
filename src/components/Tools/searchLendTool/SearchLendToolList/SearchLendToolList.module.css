@@ -5,7 +5,7 @@
 .lendToolListContainer{
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .lendToolListWrapper{
@@ -19,10 +19,11 @@
     flex: 1;
     background-color: orange;
     /*background-color: var(--border);*/
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     position: sticky;
-    top: 10px;
+    top: 70px;
+    height: max-content;
 }
 
 .lendToolListTitle{

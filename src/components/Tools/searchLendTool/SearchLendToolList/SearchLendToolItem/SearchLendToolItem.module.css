@@ -1,0 +1,84 @@
+.SearchLendToolItem {
+    border: 1px solid var(--itum-border);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.SearchLendToolImg {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.SearchLendToolDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+}
+
+.SearchLendToolName {
+    font-size: 20px;
+    color: var(--itum-title-name);
+    padding-bottom: 6px;
+}
+
+.SearchLendToolType {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.SearchLendToolOwner {
+    font-weight: 300;
+}
+
+.SearchLendToolOwnerAdres {
+    font-weight: 300;
+}
+.SearchLendToolLendButton{
+    border: none;
+    background-color: #484a4d;
+    color: var(--text-color);
+    cursor: pointer;
+
+    --button-size: calc(var(--nav-size) * 0.8);
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 300ms;
+
+    position: absolute;
+    right: -25px;
+}
+.SearchLendToolLendButton:hover {
+    filter: brightness(1.2);
+}
+
+.SearchLendToolLendButton svg {
+    fill: var(--text-color);
+    width: 20px;
+    height: 20px;
+}
+
+.SearchLendToolAboudTitle{
+    font-size: 20px;
+    color: var(--itum-title-name);
+    padding-bottom: 10px;
+}
+
+.SearchLendToolAboud {
+    flex: 2;
+}
+
+.SearchLendToolAboudText {
+}

@@ -40,9 +40,9 @@ function NavItem(props) {
 
     return (
         <li className={style.navItem}>
-            <a href="#" className={style.iconButton} onClick={() => setOpen(!open)}>
+            <button className={style.iconButton} onClick={() => setOpen(!open)}>
                 {props.icon}
-            </a>
+            </button>
 
             {open && props.children}
         </li>
@@ -65,11 +65,11 @@ function DropdownMenu() {
 
     function DropdownItem(props) {
         return (
-            <a href="#" className={style.menuItem} onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+            <button className={style.menuItem} onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
                 <span className={style.iconButton}>{props.leftIcon}</span>
                 {props.children}
                 <span className={style.iconRight}>{props.rightIcon}</span>
-            </a>
+            </button>
         );
     }
 
@@ -111,7 +111,7 @@ function DropdownMenu() {
                 onEnter={calcHeight}>
                 <div className={style.menu}>
                     <DropdownItem goToMenu="main" leftIcon={<IoIosArrowBack/>}>
-                        <h2>Gereedschap delen</h2>
+                        <h2>menu</h2>
                     </DropdownItem>
                     <Link to="/myTools">
                         <DropdownItem leftIcon={<FaTools/>}>Mijn gereedschap</DropdownItem>
@@ -133,13 +133,13 @@ function DropdownMenu() {
                 onEnter={calcHeight}>
                 <div className={style.menu}>
                     <DropdownItem goToMenu="main" leftIcon={<IoIosArrowBack/>}>
-                        <h2>Buurt projecten</h2>
+                        <h2>menu</h2>
                     </DropdownItem>
                     <Link to="/allProjects">
                         <DropdownItem leftIcon={<FaRegCalendarAlt/>}>Alle projecten</DropdownItem>
                     </Link>
                     <Link to="/myEnrolledProjects">
-                        <DropdownItem leftIcon={<FaRegCalendarPlus/>}>Mijn aangemelde projecten</DropdownItem>
+                        <DropdownItem leftIcon={<FaRegCalendarPlus/>}>Mijn komende projecten</DropdownItem>
                     </Link>
                     <Link to="/myOldProjects">
                         <DropdownItem leftIcon={<FaRegCalendarTimes/>}>Mijn oude projecten</DropdownItem>
