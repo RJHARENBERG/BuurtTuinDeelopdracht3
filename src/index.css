@@ -22,9 +22,11 @@
     --itum-title-name: #242526;
     --accent-text: #191970;
 
+    --error: red;
+
 }
 
-h1, h2, h3, p, li, span, label, button, textarea {
+h1, h2, h3, p, li, span, label, button, textarea,article {
     font-family: 'lato', SansSerif;
 }
 

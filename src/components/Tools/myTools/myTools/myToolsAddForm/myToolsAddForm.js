@@ -2,6 +2,7 @@ import React from 'react';
 import style from "./myToolsAddForm.module.css"
 import {useForm} from "react-hook-form";
 import {RiPlayListAddFill} from "react-icons/ri";
+import {BiImageAdd} from "react-icons/bi";
 
 function MyToolsAddForm(props) {
     const {register, handleSubmit, formState: {errors}} = useForm()
@@ -10,7 +11,7 @@ function MyToolsAddForm(props) {
         console.log(data)
     }
 
-    console.log(errors)
+    console.log('ERRORS', errors)
 
     return (
         <form onSubmit={handleSubmit(onFormSubmit)}>
@@ -23,37 +24,65 @@ function MyToolsAddForm(props) {
                                 <label className={style.MyToolsAddItemLabel}>
                                     Type gereedschap
                                 </label>
-                                    <input className={style.MyToolsAddFormItemInput}
-                                           type="text"
-                                           placeholder="Wat voor soort gereedschap?"
-                                           {...register("toolType", {
-                                               required: true,
-                                           })}
-                                    />
-
+                                {errors.toolType &&
+                                    <p className={style.MyToolsAddFormError}>{errors.toolType.message}</p>}
+                                <input className={style.MyToolsAddFormItemInput}
+                                       type="text"
+                                       placeholder="Wat voor soort gereedschap?"
+                                       {...register("toolType", {
+                                           required: "Type gereedschap is verplicht"
+                                       })}
+                                />
                                 <label className={style.MyToolsAddItemLabel}>
                                     Naam gereedschap
                                 </label>
-                                    <input className={style.MyToolsAddFormItemInput}
-                                           type="text"
-                                           placeholder="Wat is de naam van het product?"
-                                           {...register("toolName", {
-                                               required: true,
-                                           })}
-                                    />
-
+                                {errors.toolName &&
+                                    <p className={style.MyToolsAddFormError}>{errors.toolName.message}</p>}
+                                <input className={style.MyToolsAddFormItemInput}
+                                       type="text"
+                                       placeholder="Wat is de naam van het product?"
+                                       {...register("toolName", {
+                                           required: "Naam gereedschap is verplicht"
+                                       })}
+                                />
                                 <label className={style.MyToolsAddItemLabel}>
                                     Omschrijving
                                 </label>
-                                    <textarea className={style.MyToolsAddFormItemTextarea}
-                                              placeholder="Wat is de naam van het product?"
-                                              {...register("description", {
-                                                  required: true,
-                                                  maxLength: 150,
-                                              })}
-                                              rows="4"
-                                              cols="100"
-                                    />
+                                {errors.description &&
+                                    <p className={style.MyToolsAddFormError}>{errors.description.message}</p>}
+                                <textarea className={style.MyToolsAddFormItemTextarea}
+                                          placeholder="Wat is de naam van het product?"
+                                          {...register("description", {
+                                              required: "Omschrijving gereedschap is verplicht",
+                                              maxLength: {
+                                                  value: 150,
+                                                  message: "Sorry te veel text max 150 karakters"
+                                              }
+                                          })}
+                                          rows="4"
+                                          cols="100"
+                                />
+
+                                <label className={style.MyToolsAddItemLabel}>
+                                    Foto van gereedschap
+                                </label>
+                                {errors.picture &&
+                                    <p className={style.MyToolsAddFormError}>{errors.picture.message}</p>}
+
+
+
+                                <button id="custom-file-button" className={style.MyToolsAddItemUploadButton}>
+                                    <BiImageAdd/>
+                                </button>
+
+                                <input type='file' id="real-file-button"
+                                       // hidden="hidden"
+
+                                       {...register("picture",{
+                                           required: "foto gereedschap is verplicht"
+                                       })}
+                                />
+
                                 <button className={style.MyToolsAddFormButton}><RiPlayListAddFill/></button>
                             </div>
                         </div>

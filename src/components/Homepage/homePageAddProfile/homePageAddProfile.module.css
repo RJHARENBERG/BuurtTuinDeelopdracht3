@@ -1,0 +1,74 @@
+.HomePageAddProfileContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    background-color: var(--black-background);
+    color: var(--text-color);
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: max-content;
+
+}
+
+.HomePageAddProfileWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+}
+
+.HomePageAddProfileInputFeld {
+}
+
+.HomePageAddProfileTitle {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.HomePageAddProfileItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.HomePageAddProfileLabel {
+    font-size: 12px;
+}
+
+.MyToolsAddFormError {
+    color: var(--error)
+}
+
+.HomePageAddProfileInput {
+    height: 30px;
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+
+.HomePageAddProfileSubmitButton{
+    padding: 10px;
+    background-color: var(--black-background);
+    color: var(--border);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.HomePageAddProfileSubmitButton svg{
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
