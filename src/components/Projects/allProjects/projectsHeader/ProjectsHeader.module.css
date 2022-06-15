@@ -1,0 +1,29 @@
+.ProjectsHeader {
+    margin-top: 60px;
+}
+
+.ProjectsHeaderTitles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.ProjectsHeaderTitleSmal {
+    position: absolute;
+    top: 10%;
+    font-size: 20px;
+}
+
+.ProjectsHeaderTitleLarge {
+    position: absolute;
+    top: 13%;
+    font-size: 100px;
+}
+
+.ProjectsHeaderImg {
+    width: 100%;
+    height: 450px;
+    margin-top: 80px;
+    object-fit: cover;
+}
