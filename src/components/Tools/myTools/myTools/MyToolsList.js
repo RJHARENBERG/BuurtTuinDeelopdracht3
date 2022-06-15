@@ -26,7 +26,7 @@ function MyToolsList(props) {
                             <div className={style.MyToolsListItem}>
                                 <label>Type gereedschap</label>
                                 <input type="text"
-                                       placeholder="Wat voor gereedschap?"
+                                       placeholder="Wat voor soort gereedschap?"
                                        className={style.MyToolsListSearchInput}
                                        onChange={e => setTool(e.target.value)}
                                 />
@@ -45,17 +45,15 @@ function MyToolsList(props) {
                                         className={style.MyToolsListDate}
                                         minDate={new Date()}
                                     />}
+
                                 </div>
-                                <button><FaSearch/></button>
+                                <button className={style.MyToolsListSearchButton}><FaSearch/></button>
                             </div>
                         </div>
                         <div className={style.MyToolsListAddTool}>
-                            <h1 className={style.MyToolsListSearchAddToolTitle}>Uit lenen</h1>
                             <MyToolsAddForm/>
                         </div>
-
                     </div>
-
                     <div className={style.MyToolsListResult}>
                         <MyToolsItem/>
                         <MyToolsItem/>

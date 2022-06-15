@@ -1,0 +1,71 @@
+.MyToolsAddForm {
+}
+
+.MyToolsAddFormContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.MyToolsAddFormWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+}
+
+.MyToolsAddFormInputFeld {
+}
+
+.MyToolsAddFormTitle {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.MyToolsAddFormItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.MyToolsAddItemLabel {
+    font-size: 12px;
+}
+
+.MyToolsAddFormItemInput {
+    height: 30px;
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+.MyToolsAddFormItemTextarea{
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+.MyToolsAddFormButton {
+    padding: 10px;
+    background-color: var(--black-background);
+    color: var(--border);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.MyToolsAddFormButton svg {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

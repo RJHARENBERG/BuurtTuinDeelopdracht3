@@ -12,12 +12,15 @@
     max-width: 1024px;
     display: flex;
     gap: 20px;
+
 }
 
 .MyToolsListControl {
     flex: 1;
+    position: sticky;
+    top: 70px;
+    height: 400px;
 }
-
 
 /*Search control=================*/
 .MyToolsListSearch {
@@ -25,12 +28,15 @@
     /*background-color: var(--border);*/
     padding: 20px;
     border-radius: 10px;
-    position: sticky;
-    top: 70px;
+
     height: max-content;
+
 }
 
 .MyToolsListItem > button {
+
+}
+.MyToolsListSearchButton{
     padding: 10px;
     background-color: var(--search-border);
     color: var(--border);
@@ -38,6 +44,11 @@
     width: 100%;
     cursor: pointer;
 }
+.MyToolsListSearchButton svg{
+    width: 20px;
+    height: 20px;
+}
+
 
 .MyToolsListSearchTitle {
     font-size: 20px;
@@ -49,7 +60,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin-bottom: 10px;
+
 }
 
 .MyToolsListItem > label {
@@ -88,17 +99,13 @@
 /*Add tool control ==========================*/
 .MyToolsListAddTool {
     background-color: var(--black-background);
+    color: var(--text-color);
     padding: 20px;
+    margin-top: 10px;
     border-radius: 10px;
-    position: sticky;
-    top: 320px;
     height: max-content;
 
 }
 
-.MyToolsListSearchAddToolTitle{
-    font-size: 20px;
-    color: var(--text-color);
-    margin-bottom: 10px;
-}
+
 
