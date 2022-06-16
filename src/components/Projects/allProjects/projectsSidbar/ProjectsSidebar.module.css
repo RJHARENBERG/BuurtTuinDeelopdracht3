@@ -1,3 +1,65 @@
-.ProjectsSidebar{
+.ProjectsSidebar {
     flex: 3;
+    margin: 20px;
+    padding-bottom: 30px;
+    background-color: var(--white-background);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ProjectsSidebarItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.ProjectsSidebarTitle{
+    margin: 10px;
+    padding: 5px;
+    width: 80%;
+    border-top: 1px solid var(--itum-border);
+    border-bottom: 1px solid var(--itum-border);
+    font-size: 20px;
+    color: var(--accent-text);
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+
+}
+
+.ProjectsSidebarImg{
+    margin-top: 15px;
+
+}
+
+.ProjectsSidebarPText{
+    padding: 30px;
+}
+
+.ProjectsSidebarList{
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.ProjectsSidebarListItem{
+    display: block;
+    width: 50px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.ProjectsSidebarSociaal{
+    margin-top: 15px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProjectsSidebarIcon{
+    font-size: 16px;
+    margin-left: 15px;
 }
