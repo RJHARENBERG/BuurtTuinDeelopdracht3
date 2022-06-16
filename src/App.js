@@ -15,6 +15,8 @@ import MyOldProjects from "./components/Projects/myOldProjects/MyOldProjects";
 import AddProjects from "./components/Projects/addProjects/AddProjects";
 import Footer from "./components/footer/Footer";
 import SearchLendTool from "./components/Tools/searchLendTool/SearchLendTool";
+import ProjectSingelPost from "./components/Projects/projectViewPost/projectSingelPost/projectSingelPost";
+import ProjectViewPost from "./components/Projects/projectViewPost/projectViewPost";
 
 
 function App() {
@@ -35,6 +37,7 @@ function App() {
                     <Route path="/toolReservation" component={ToolReservation}/>
 
                     <Route path="/allProjects" component={AllProjects}/>
+                    <Route path="/projectViewPost" component={ProjectViewPost}/>
                     <Route path="/myEnrolledProjects" component={MyEnrolledProjects}/>
                     <Route path="/myOldProjects" component={MyOldProjects}/>
                     <Route path="/addProjects" component={AddProjects}/>

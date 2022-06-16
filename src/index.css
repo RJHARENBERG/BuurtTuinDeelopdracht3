@@ -17,10 +17,11 @@
     --green-background: radial-gradient(circle, rgba(10, 176, 18, 1), rgba(67, 140, 34, 1) 100%);
     --white-background: white;
     --white-text: white;
-    --search-border: orange;
-    --itum-border: #484a4d;
-    --itum-title-name: #242526;
     --accent-text: #191970;
+    --search-border: orange;
+    --itum-border: orange;
+    --itum-title-name: #242526;
+
 
     --error: red;
 

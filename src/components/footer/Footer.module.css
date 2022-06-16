@@ -3,12 +3,12 @@
     background-color: var(--black-background);
     color: var(--text-color);
     width: 100%;
-    max-widt: 1024px;
     font-size: 12px;
-    margin-top: 40px;
     padding: 10px;
     height: 50px;
+    margin-top: 20px;
 
-    position: fixed;
-    bottom: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }

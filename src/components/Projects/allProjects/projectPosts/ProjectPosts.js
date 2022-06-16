@@ -1,13 +1,20 @@
 import React from 'react';
 import style from "./ProjectPosts.module.css"
-import ProjectPostItem from "./projectPostItum/ProjectPostItem";
+import ProjectPostsItem from "./projectPostsItem/ProjectPostsItem";
+
 
 
 
 function ProjectPosts(props) {
     return (
         <div className={style.ProjectPosts}>
-            <ProjectPostItem/>
+            <ProjectPostsItem/>
+            <ProjectPostsItem/>
+            <ProjectPostsItem/>
+            <ProjectPostsItem/>
+            <ProjectPostsItem/>
+            <ProjectPostsItem/>
+            <ProjectPostsItem/>
         </div>
     );
 }
