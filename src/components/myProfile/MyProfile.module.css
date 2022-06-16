@@ -1,0 +1,87 @@
+.MyProfile {
+    display: flex;
+}
+
+.MyProfileWrapper {
+    flex: 9;
+    padding: 20px;
+    margin-left: 100px;
+}
+
+.MyProfileTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.MyProfileUpdateTitle {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--accent-text);
+}
+
+.MyProfileDeleteTitle {
+    font-size: 22px;
+    color: var(--error);
+    cursor: pointer;
+}
+
+.MyProfileForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.MyProfileForm > label {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.MyProfileForm > input {
+    font-size: 20px;
+    margin: 10px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    outline: none;
+}
+
+.MyProfileImg {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.MyProfileImg > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.MyProfileImgIcon {
+}
+
+.MyProfileImgIcon svg {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.MyProfileSubmitButton {
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--black-background);
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 20px;
+}
+
+.MyProfileSubmitButton svg {
+    width: 30px;
+    height: 30px;
+}

@@ -68,6 +68,7 @@
 background-color: var(--black-background);
     border: none;
     color: var(--text-color);
+    cursor: pointer;
 }
 
 .MyToolsAddItemUploadButton svg {

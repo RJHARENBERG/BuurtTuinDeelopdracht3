@@ -68,16 +68,10 @@ function MyToolsAddForm(props) {
                                 </label>
                                 {errors.picture &&
                                     <p className={style.MyToolsAddFormError}>{errors.picture.message}</p>}
-
-
-
-                                <button id="custom-file-button" className={style.MyToolsAddItemUploadButton}>
-                                    <BiImageAdd/>
-                                </button>
-
-                                <input type='file' id="real-file-button"
-                                       // hidden="hidden"
-
+                                <label htmlFor="imgInput">
+                                    <i className={style.MyToolsAddItemUploadButton}><BiImageAdd/></i>
+                                </label>
+                                <input type='file' id="imgInput" style={{display: "none"}}
                                        {...register("picture",{
                                            required: "foto gereedschap is verplicht"
                                        })}
