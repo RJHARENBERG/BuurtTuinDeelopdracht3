@@ -12,7 +12,7 @@ import Notifications from "./components/notifications/Notifications";
 import AllProjects from "./components/Projects/allProjects/AllProjects";
 import MyEnrolledProjects from "./components/Projects/myEnrolledProjects/myEnrolledProjects";
 import MyOldProjects from "./components/Projects/myOldProjects/MyOldProjects";
-import AddProjects from "./components/Projects/addProjects/AddProjects";
+import AddProject from "./components/Projects/addProjects/AddProject";
 import Footer from "./components/footer/Footer";
 import SearchLendTool from "./components/Tools/searchLendTool/SearchLendTool";
 import ProjectSingelPost from "./components/Projects/projectViewPost/projectSingelPost/projectSingelPost";
@@ -40,7 +40,7 @@ function App() {
                     <Route path="/projectViewPost" component={ProjectViewPost}/>
                     <Route path="/myEnrolledProjects" component={MyEnrolledProjects}/>
                     <Route path="/myOldProjects" component={MyOldProjects}/>
-                    <Route path="/addProjects" component={AddProjects}/>
+                    <Route path="/addProject" component={AddProject}/>
                 </Switch>
                 <Footer/>
             {/*</Router>*/}

@@ -1,0 +1,78 @@
+.AddProject {
+    padding-top: 50px;
+}
+
+
+.AddProjectImg{
+    margin: 150px;
+    width: 80vw;
+    height: 250px;
+    border-radius: 5px;
+    object-fit: cover;
+    position: relative;
+
+}
+
+
+
+.AddProjectForm {
+    /*position: relative;*/
+}
+
+.AddProjectGroup {
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.AddProjectIcon svg{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.AddProjectInput {
+    font-size: 30px;
+    border:  none;
+    padding: 20px;
+    width: 70vw;
+}
+
+.AddProjectInput:focus {
+    outline: none;
+}
+
+.AddProjectWriteGroup {
+}
+
+.AddProjectWriteTextGroup {
+    font-size: 20px;
+    border:  none;
+    padding: 20px;
+    width: 80vw;
+    height: 100vh;
+}
+
+.AddProjectWriteTextGroup:focus{
+    outline: none;
+}
+
+
+.AddProjectSubmit {
+    position: absolute;
+    z-index: 1;
+    top: 240px;
+    left: 125px;
+    background-color: var(--black-background);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+}
+
+.AddProjectSubmit svg{
+    width: 30px;
+    height: 30px;
+}
+
