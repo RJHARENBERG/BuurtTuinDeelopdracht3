@@ -11,10 +11,7 @@ function AllProjects(props) {
             <div className={style.AllProjectsBody}>
                 <ProjectPosts/>
                 <ProjectsSidebar/>
-
             </div>
-
-
         </>
     );
 }

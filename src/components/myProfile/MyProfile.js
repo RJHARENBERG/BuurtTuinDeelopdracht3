@@ -1,10 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import style from "./MyProfile.module.css"
 import {FaRegUserCircle} from "react-icons/fa";
 import {RiPlayListAddFill} from "react-icons/ri";
 import ProjectsSidebar from "../Projects/allProjects/projectsSidbar/ProjectsSidebar";
+import axios from "axios";
 
 function MyProfile(props) {
+
+    const [user, setUser] = useState([])
+
+    useEffect(() => {
+        async function fetchUser() {
+            try {
+                const response = await axios.get('http://localhost:8080/findUserByUsername/user');
+                // Plaats alle studenten in de state zodat we het op de pagina kunnen gebruiken
+                setUser(response.data);
+                console.log(response.data);
+            } catch(e) {
+                console.error(e);
+            }
+        }
+        fetchUser();
+    }, []);
+
     return (
         <div className={style.MyProfile}>
             <div className={style.MyProfileWrapper}>
