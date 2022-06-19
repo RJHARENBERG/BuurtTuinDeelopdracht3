@@ -17,15 +17,17 @@ import Footer from "./components/footer/Footer";
 import SearchLendTool from "./components/Tools/searchLendTool/SearchLendTool";
 import ProjectSingelPost from "./components/Projects/projectViewPost/projectSingelPost/projectSingelPost";
 import ProjectViewPost from "./components/Projects/projectViewPost/projectViewPost";
+import HomePageAddProfile from "./components/Homepage/homePageAddProfile/homePageAddProfile";
 
 
 function App() {
     return (
         <>
-            {/*<Router>*/}
                 <TopNavbar/>
                 <Switch>
                     <Route exact path={"/"} component={Homepage}/>
+                    <Route exact path={"/addProfile"} component={HomePageAddProfile}/>
+
                     <Route path={"/messagesDashboard"} component={MessagesDashboard}/>
                     <Route path={"/notifications"} component={Notifications}/>
 
@@ -43,7 +45,6 @@ function App() {
                     <Route path="/addProject" component={AddProject}/>
                 </Switch>
                 <Footer/>
-            {/*</Router>*/}
         </>
     );
 }

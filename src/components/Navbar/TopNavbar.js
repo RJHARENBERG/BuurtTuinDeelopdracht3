@@ -1,7 +1,10 @@
-import {FaRegBell, FaTools, FaRegCalendarAlt, FaHandHolding, FaIdCard,
-    FaRegCalendarPlus, FaRegCalendarTimes} from 'react-icons/fa';
-import {AiOutlineMessage} from "react-icons/ai";
+import {
+    FaTools, FaRegCalendarAlt, FaHandHolding, FaIdCard,
+    FaRegCalendarPlus, FaRegCalendarTimes
+} from 'react-icons/fa';
+import {AiOutlineHome, AiOutlineMessage} from "react-icons/ai";
 import {IoIosArrowBack, IoIosArrowDown, IoIosArrowForward} from "react-icons/io";
+import {BsBell} from "react-icons/bs";
 
 import style from './NavbarBody.module.css';
 
@@ -9,13 +12,17 @@ import React, {useState, useEffect, useRef} from 'react';
 import {CSSTransition} from 'react-transition-group';
 import {Link} from "react-router-dom";
 
+
 function TopNavbar(props) {
 
     return (
 
         <Navbar>
+            <Link to="/" >
+                <NavItem icon={<AiOutlineHome/>}/>
+            </Link>
             <Link to="/notifications" >
-                <NavItem icon={<FaRegBell/>}/>
+                <NavItem icon={<BsBell/>}/>
             </Link>
             <Link to="/messagesDashboard">
                 <NavItem icon={<AiOutlineMessage/>}/>

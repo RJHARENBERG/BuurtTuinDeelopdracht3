@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    border: 1px solid red;
 }
 
 .HomePageWelkomWrapper{
@@ -14,7 +13,6 @@
     align-items: center;
 
     gap: 20px;
-    border: 1px solid black;
 }
 
 .HomePageWelkomTitle{

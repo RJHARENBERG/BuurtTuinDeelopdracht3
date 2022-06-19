@@ -1,5 +1,18 @@
+.HomePageLogin {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+}
+
+.HomePageLoginForm {
+    border-bottom: 1px solid var(--itum-border);
+}
+
 .HomePageLoginContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     background-color: var(--black-background);
@@ -19,12 +32,14 @@
 }
 
 .HomePageLoginFormInputFeld {
+    width: 100%;
 }
 
 .HomePageLoginTitle {
-    font-size: 20px;
+    font-size: 50px;
     color: var(--text-color);
     margin-bottom: 10px;
+
 }
 
 .HomePageLoginItem {
@@ -35,6 +50,7 @@
 
 .HomePageLoginLabel {
     font-size: 12px;
+    margin: 10px 0px;
 }
 
 .MyToolsAddFormError {
@@ -49,7 +65,7 @@
 }
 
 
-.HomePageLoginSubmitButton{
+.HomePageLoginSubmitButton {
     padding: 10px;
     background-color: var(--black-background);
     color: var(--border);
@@ -58,7 +74,19 @@
     cursor: pointer;
 }
 
-.HomePageLoginSubmitButton svg{
+.HomePageLoginSubmitButton svg {
+    width: 30px;
+    height: 30px;
+}
+
+.HomePageLoginRegisterButton {
+    background-color: var(--black-background);
+    color: var(--text-color);
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.HomePageLoginRegisterButton svg{
     width: 30px;
     height: 30px;
 }

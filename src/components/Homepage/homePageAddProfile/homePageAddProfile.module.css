@@ -1,7 +1,36 @@
+
+.HomePageAdd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.HomePageAddProfileImg{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    margin-bottom: 500px;
+}
+
+.HomePageAddProfile {
+    position: absolute;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+}
+
+.HomePageAddProfileForm {
+    border-bottom: 1px solid var(--itum-border);
+}
+
 .HomePageAddProfileContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 10px;
 
     background-color: var(--black-background);
     color: var(--text-color);
@@ -9,8 +38,8 @@
     margin-top: 10px;
     border-radius: 10px;
     height: max-content;
-
 }
+
 
 .HomePageAddProfileWrapper {
     width: 100%;
@@ -20,10 +49,11 @@
 }
 
 .HomePageAddProfileInputFeld {
+    width: 100%;
 }
 
 .HomePageAddProfileTitle {
-    font-size: 20px;
+    font-size: 40px;
     color: var(--text-color);
     margin-bottom: 10px;
 }
@@ -36,6 +66,7 @@
 
 .HomePageAddProfileLabel {
     font-size: 12px;
+    margin: 10px 0px;
 }
 
 .MyToolsAddFormError {
@@ -49,7 +80,7 @@
     width: 100%;
 }
 
-.HomePageAddProfileSubmitButton{
+.HomePageAddProfileSubmitButton {
     padding: 10px;
     background-color: var(--black-background);
     color: var(--border);
@@ -58,7 +89,7 @@
     cursor: pointer;
 }
 
-.HomePageAddProfileSubmitButton svg{
+.HomePageAddProfileSubmitButton svg {
     width: 30px;
     height: 30px;
 }
