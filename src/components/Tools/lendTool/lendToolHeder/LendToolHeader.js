@@ -51,7 +51,8 @@ function LendToolHeader(props) {
                         </div>
                         <div className={style.lenderToolHeaderSearchItem}>
                             <FaRegCalendarAlt className={style.lenderToolSearchIcon}/>
-                            <span onClick={() => setOpenDate(!openDate)} className={style.lenderToolSearchText}>
+                            <span onClick={() => setOpenDate(!openDate)}
+                                  className={style.lenderToolSearchText}>
                                 {`${format(date[0].startDate, "MM/dd/yyyy")} 
                             to ${format(date[0].endDate, "MM/dd/yyyy")}`}
                             </span>

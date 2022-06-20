@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from "./AddProject.module.css"
 import {BiImageAdd} from "react-icons/bi";
 import {RiPlayListAddFill} from "react-icons/ri";
 import {useForm} from "react-hook-form";
 import axios from "axios";
+
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 
 function AddProject(props) {
     const {register, handleSubmit, formState: {errors}} = useForm()
@@ -14,10 +17,14 @@ function AddProject(props) {
             .post(
                 'http://localhost:8080/addProject',
                 data,
-                { headers: { 'Content-Type': 'application/json' }}
+                {headers: {'Content-Type': 'application/json'}}
             )
-            .then(response => {console.log(response.data)})
-            .catch(error => {console.log(error.data)});
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log(error.data)
+            });
     };
 
     console.log('ERRORS', errors)
@@ -31,15 +38,19 @@ function AddProject(props) {
                 alt=""
             />
             <form onSubmit={handleSubmit(onFormSubmit)} className={style.AddProjectForm}>
-                {errors.picture && <p className={style.MyToolsAddFormError}>{errors.picture.message}</p>}
-                {errors.title && <p className={style.MyToolsAddFormError}>{errors.title.message}</p>}
-                {errors.text && <p className={style.MyToolsAddFormError}>{errors.text.message}</p>}
+                {errors.file && <p className={style.MyToolsAddFormError}>{errors.file.message}</p>}
+                {errors.name && <p className={style.MyToolsAddFormError}>{errors.name.message}</p>}
+                {errors.date && <p className={style.MyToolsAddFormError}>{errors.date.message}</p>}
+                {errors.location && <p className={style.MyToolsAddFormError}>{errors.location.message}</p>}
+                {errors.description && <p className={style.MyToolsAddFormError}>{errors.description.message}</p>}
                 <div className={style.AddProjectGroup}>
                     <label htmlFor="imgInput">
                         <i className={style.AddProjectIcon}><BiImageAdd/></i>
                     </label>
-                    <input type="file" id="imgInput" style={{display: "none"}}
-                           {...register("picture", {
+                    <input type="file"
+                           id="imgInput"
+                           style={{display: "none"}}
+                           {...register("file", {
                                required: "Project foto is verplicht"
                            })}
                     />
@@ -51,8 +62,22 @@ function AddProject(props) {
                                required: "Sorry maar er mist nog een project title"
                            })}
                     />
+                    <div>
+                        <input
+                            className={style.AddProjectDate}
+                            type="date"
+                            {...register("date")}
+                        />
+                    </div>
+                    <input type="text"
+                           placeholder="locatie..."
+                           className={style.AddProjectInput}
+                           autoFocus={true}
+                           {...register("location", {
+                               required: "Sorry maar er mist nog een locatie"
+                           })}
+                    />
                 </div>
-
                 <div className={style.AddProjectWriteGroup}
                      className={style.AddProjectGroup}>
                     <textarea
@@ -60,7 +85,7 @@ function AddProject(props) {
                         type={"text"}
                         className={style.AddProjectWriteTextGroup}
                         {...register("description", {
-                            required: "Sorry maar er moet nog een omschrijving bij"
+                            required: "Sorry maar er mist nog een omschrijving"
                         })}
                     >
                     </textarea>

@@ -66,6 +66,7 @@
     padding: 10px;
     border: none;
     border-radius: 50%;
+
 }
 
 .AddProjectSubmit svg{
@@ -76,6 +77,11 @@
 .MyToolsAddFormError{
     color: red;
     margin-left: 150px;
+    font-size: 20px;
+}
+
+.AddProjectDate{
+    border: none;
     font-size: 20px;
 }
 
