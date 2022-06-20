@@ -3,13 +3,22 @@ import style from "./myToolsAddForm.module.css"
 import {useForm} from "react-hook-form";
 import {RiPlayListAddFill} from "react-icons/ri";
 import {BiImageAdd} from "react-icons/bi";
+import axios from "axios";
 
 function MyToolsAddForm(props) {
     const {register, handleSubmit, formState: {errors}} = useForm()
 
-    function onFormSubmit(data) {
+    const onFormSubmit = data => {
         console.log(data)
-    }
+        axios
+            .post(
+                'http://localhost:8080/addTool',
+                data,
+                { headers: { 'Content-Type': 'application/json' }}
+            )
+            .then(response => {console.log(response.data)})
+            .catch(error => {console.log(error.data)});
+    };
 
     console.log('ERRORS', errors)
 
@@ -24,12 +33,12 @@ function MyToolsAddForm(props) {
                                 <label className={style.MyToolsAddItemLabel}>
                                     Type gereedschap
                                 </label>
-                                {errors.toolType &&
-                                    <p className={style.MyToolsAddFormError}>{errors.toolType.message}</p>}
+                                {errors.type &&
+                                    <p className={style.MyToolsAddFormError}>{errors.type.message}</p>}
                                 <input className={style.MyToolsAddFormItemInput}
                                        type="text"
                                        placeholder="Wat voor soort gereedschap?"
-                                       {...register("toolType", {
+                                       {...register("type", {
                                            required: "Type gereedschap is verplicht"
                                        })}
                                 />

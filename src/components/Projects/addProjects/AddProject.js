@@ -3,13 +3,22 @@ import style from "./AddProject.module.css"
 import {BiImageAdd} from "react-icons/bi";
 import {RiPlayListAddFill} from "react-icons/ri";
 import {useForm} from "react-hook-form";
+import axios from "axios";
 
 function AddProject(props) {
     const {register, handleSubmit, formState: {errors}} = useForm()
 
-    function onFormSubmit(data) {
+    const onFormSubmit = data => {
         console.log(data)
-    }
+        axios
+            .post(
+                'http://localhost:8080/addProject',
+                data,
+                { headers: { 'Content-Type': 'application/json' }}
+            )
+            .then(response => {console.log(response.data)})
+            .catch(error => {console.log(error.data)});
+    };
 
     console.log('ERRORS', errors)
 
@@ -38,7 +47,7 @@ function AddProject(props) {
                            placeholder="Title"
                            className={style.AddProjectInput}
                            autoFocus={true}
-                           {...register("title", {
+                           {...register("name", {
                                required: "Sorry maar er mist nog een project title"
                            })}
                     />
@@ -49,7 +58,7 @@ function AddProject(props) {
                         placeholder="Omschrijf het project..."
                         type={"text"}
                         className={style.AddProjectWriteTextGroup}
-                        {...register("text", {
+                        {...register("description", {
                             required: "Sorry maar er moet nog een omschrijving bij"
                         })}
                     >
