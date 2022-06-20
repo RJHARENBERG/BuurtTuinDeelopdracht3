@@ -52,6 +52,7 @@ function AddProject(props) {
                            })}
                     />
                 </div>
+
                 <div className={style.AddProjectWriteGroup}
                      className={style.AddProjectGroup}>
                     <textarea
