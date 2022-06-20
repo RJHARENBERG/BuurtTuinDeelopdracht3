@@ -23,7 +23,9 @@ function MyProfile(props) {
         fetchUser();
     }, []);
 
+    // user.map((user) => {})
     return (
+
         <div className={style.MyProfile}>
             <div className={style.MyProfileWrapper}>
 
@@ -67,7 +69,9 @@ function MyProfile(props) {
             </div>
             <ProjectsSidebar/>
         </div>
+
     );
+
 }
 
 export default MyProfile;

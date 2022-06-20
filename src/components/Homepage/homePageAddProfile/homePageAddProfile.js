@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from "./homePageAddProfile.module.css"
 import {useForm} from "react-hook-form";
 import {AiOutlineUserAdd} from "react-icons/ai";
+import axios from "axios";
 
 function HomePageAddProfile(props) {
     const {register, handleSubmit, formState: {errors}} = useForm()
-
-    function onFormSubmit(data) {
+    const [addSucces, toggleAddSuccess] = useState(false);
+    const onFormSubmit = data => {
         console.log(data)
-    }
+        axios
+            .post(
+                'http://localhost:8080/addUser',
+                data,
+                { headers: { 'Content-Type': 'application/json' }}
+            )
+            .then(response => {console.log(response.data)})
+            .catch(error => {console.log(error.data)});
+        toggleAddSuccess(true);
+    };
 
     return (
         <div className={style.HomePageAdd}>
@@ -23,6 +33,7 @@ function HomePageAddProfile(props) {
                         <div className={style.HomePageAddProfileWrapper}>
                             <div className={style.HomePageAddProfileInputFeld}>
                                 <h1 className={style.HomePageAddProfileTitle}>Maak een profiel</h1>
+                                {addSucces === true && <p>Je bent toegevoegd!</p>}
                                 <div className={style.HomePageAddProfileItem}>
 
                                     <label className={style.HomePageAddProfileLabel}>
@@ -32,6 +43,7 @@ function HomePageAddProfile(props) {
                                         <p className={style.MyToolsAddFormError}>{errors.username.message}</p>}
                                     <input
                                         className={style.HomePageAddProfileInput}
+                                        type="text"
                                         {...register("username", {
                                             required: "Type gereedschap is verplicht"
                                         })}
@@ -39,11 +51,12 @@ function HomePageAddProfile(props) {
                                     <label className={style.HomePageAddProfileLabel}>
                                         Wachtwoord
                                     </label>
-                                    {errors.paswoord &&
-                                        <p className={style.MyToolsAddFormError}>{errors.paswoord.message}</p>}
+                                    {errors.password &&
+                                        <p className={style.MyToolsAddFormError}>{errors.password.message}</p>}
                                     <input
                                         className={style.HomePageAddProfileInput}
-                                        {...register("paswoord", {
+                                        type="password"
+                                        {...register("password", {
                                             required: "Type gereedschap is verplicht"
                                         })}
                                     />
@@ -54,6 +67,7 @@ function HomePageAddProfile(props) {
                                         <p className={style.MyToolsAddFormError}>{errors.firstName.message}</p>}
                                     <input
                                         className={style.HomePageAddProfileInput}
+                                        type="text"
                                         {...register("firstName", {
                                             required: "Type gereedschap is verplicht"
                                         })}
@@ -65,6 +79,7 @@ function HomePageAddProfile(props) {
                                         <p className={style.MyToolsAddFormError}>{errors.lastName.message}</p>}
                                     <input
                                         className={style.HomePageAddProfileInput}
+                                        type="text"
                                         {...register("lastName", {
                                             required: "Type gereedschap is verplicht"
                                         })}
@@ -76,6 +91,7 @@ function HomePageAddProfile(props) {
                                         <p className={style.MyToolsAddFormError}>{errors.zipcode.message}</p>}
                                     <input
                                         className={style.HomePageAddProfileInput}
+                                        type="text"
                                         {...register("zipcode", {
                                             required: "Type gereedschap is verplicht"
                                         })}
@@ -87,6 +103,7 @@ function HomePageAddProfile(props) {
                                         <p className={style.MyToolsAddFormError}>{errors.streetName.message}</p>}
                                     <input
                                         className={style.HomePageAddProfileInput}
+                                        type="text"
                                         {...register("streetName", {
                                             required: "Type gereedschap is verplicht"
                                         })}
@@ -98,7 +115,21 @@ function HomePageAddProfile(props) {
                                         <p className={style.MyToolsAddFormError}>{errors.houseNumber.message}</p>}
                                     <input
                                         className={style.HomePageAddProfileInput}
+                                        type="number"
                                         {...register("houseNumber", {
+                                            required: "Type gereedschap is verplicht"
+                                        })}
+                                    />
+
+                                    <label className={style.HomePageAddProfileLabel}>
+                                        Email
+                                    </label>
+                                    {errors.email &&
+                                        <p className={style.MyToolsAddFormError}>{errors.email.message}</p>}
+                                    <input
+                                        className={style.HomePageAddProfileInput}
+                                        type="email"
+                                        {...register("email", {
                                             required: "Type gereedschap is verplicht"
                                         })}
                                     />
