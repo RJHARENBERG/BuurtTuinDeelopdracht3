@@ -4,13 +4,22 @@ import {useForm} from "react-hook-form";
 import {AiOutlineLogin} from "react-icons/ai";
 import {FaRegAddressCard} from "react-icons/fa";
 import {useHistory} from "react-router-dom";
+import axios from "axios";
 
 function HomePageLogin(props) {
     const {register, handleSubmit, formState: {errors}} = useForm()
 
-    function onFormSubmit(data) {
+    const onFormSubmit = data => {
         console.log(data)
-    }
+        axios
+            .post(
+                'http://localhost:8080/authenticate',
+                data,
+                { headers: { 'Content-Type': 'application/json' }}
+            )
+            .then(response => {console.log(response.data)})
+            .catch(error => {console.log(error.data)});
+    };
 
     let history = useHistory();
 
@@ -42,13 +51,13 @@ function HomePageLogin(props) {
                                 <label className={style.HomePageLoginLabel}>
                                     Wachtwoord
                                 </label>
-                                {errors.paswoord &&
-                                    <p className={style.MyToolsAddFormError}>{errors.paswoord.message}</p>}
+                                {errors.password &&
+                                    <p className={style.MyToolsAddFormError}>{errors.password.message}</p>}
                                 <input
                                     type="password"
                                     placeholder="vul hier je password in..."
                                     className={style.HomePageLoginInput}
-                                    {...register("paswoord", {
+                                    {...register("password", {
                                         required: "Type gereedschap is verplicht"
                                     })}
                                 />
