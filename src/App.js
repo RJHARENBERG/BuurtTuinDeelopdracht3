@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './App.css';
-import {BrowserRouter as Router, Switch, Route,} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect,} from 'react-router-dom';
 import TopNavbar from "./components/Navbar/TopNavbar";
 import Homepage from "./components/Homepage/Homepage";
 import MyProfile from "./components/myProfile/MyProfile";
@@ -18,9 +18,13 @@ import SearchLendTool from "./components/Tools/searchLendTool/SearchLendTool";
 import ProjectSingelPost from "./components/Projects/projectViewPost/projectSingelPost/projectSingelPost";
 import ProjectViewPost from "./components/Projects/projectViewPost/projectViewPost";
 import HomePageAddProfile from "./components/Homepage/homePageAddProfile/homePageAddProfile";
+import {AuthContext}from "./context/AuthContext";
+
 
 
 function App() {
+    const { isAuth } = useContext(AuthContext);
+
     return (
         <>
                 <TopNavbar/>
@@ -28,21 +32,44 @@ function App() {
                     <Route exact path={"/"} component={Homepage}/>
                     <Route exact path={"/addProfile"} component={HomePageAddProfile}/>
 
-                    <Route path={"/messagesDashboard"} component={MessagesDashboard}/>
-                    <Route path={"/notifications"} component={Notifications}/>
+                    <Route path={"/messagesDashboard"}>
+                        {isAuth ? <MessagesDashboard /> : <Redirect to="/" />}
+                    </Route>
+                    <Route path={"/notifications"}>
+                        {isAuth ? <Notifications /> : <Redirect to="/" />}
+                    </Route>
 
-                    <Route path={"/myProfile"} component={MyProfile}/>
+                    <Route path={"/myProfile"}>
+                        {isAuth ? <MyProfile /> : <Redirect to="/" />}
+                    </Route>
+                    <Route path={"/myTools"}>
+                        {isAuth ? <MyTools /> : <Redirect to="/" />}
+                    </Route>
+                    <Route path="/lendTool">
+                        {isAuth ? <LendTool /> : <Redirect to="/" />}
+                    </Route>
+                    <Route path="/searchLendTool">
+                        {isAuth ? <SearchLendTool /> : <Redirect to="/" />}
+                    </Route>
+                    <Route path="/toolReservation">
+                        {isAuth ? <ToolReservation /> : <Redirect to="/" />}
+                    </Route>
 
-                    <Route path={"/myTools"} component={MyTools}/>
-                    <Route path="/lendTool" component={LendTool}/>
-                    <Route path="/searchLendTool" component={SearchLendTool}/>
-                    <Route path="/toolReservation" component={ToolReservation}/>
-
-                    <Route path="/allProjects" component={AllProjects}/>
-                    <Route path="/projectViewPost" component={ProjectViewPost}/>
-                    <Route path="/myEnrolledProjects" component={MyEnrolledProjects}/>
-                    <Route path="/myOldProjects" component={MyOldProjects}/>
-                    <Route path="/addProject" component={AddProject}/>
+                    <Route path="/allProjects">
+                        {isAuth ? <AllProjects /> : <Redirect to="/" />}
+                    </Route>
+                    <Route path="/projectViewPost">
+                        {isAuth ? <ProjectViewPost /> : <Redirect to="/" />}
+                    </Route>
+                    <Route path="/myEnrolledProjects">
+                        {isAuth ? <MyEnrolledProjects /> : <Redirect to="/" />}
+                    </Route>
+                    <Route path="/myOldProjects">
+                        {isAuth ? <MyOldProjects /> : <Redirect to="/" />}
+                    </Route>
+                    <Route path="/addProject">
+                        {isAuth ? <AddProject /> : <Redirect to="/" />}
+                    </Route>
                 </Switch>
                 <Footer/>
         </>

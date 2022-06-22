@@ -41,14 +41,6 @@ function SearchLendToolList(props) {
                     </div>
                     <div className={styles.lendToolListResult}>
                         <SearchLendToolItem/>
-                        <SearchLendToolItem/>
-                        <SearchLendToolItem/>
-                        <SearchLendToolItem/>
-                        <SearchLendToolItem/>
-                        <SearchLendToolItem/>
-                        <SearchLendToolItem/>
-                        <SearchLendToolItem/>
-
                     </div>
                 </div>
             </div>

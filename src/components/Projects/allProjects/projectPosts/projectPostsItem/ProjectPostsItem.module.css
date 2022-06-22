@@ -1,6 +1,7 @@
 .ProjectPostsItem {
     width: 385px;
     margin: 0px 25px 40px 25px;
+    position: relative;
 }
 
 .ProjectPostsItemImg {
@@ -54,4 +55,35 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 
+}
+
+.ProjectPostsItemEnrollButton{
+    border: none;
+    background-color: #484a4d;
+    color: var(--text-color);
+    cursor: pointer;
+
+    --button-size: calc(var(--nav-size) * 0.8);
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 300ms;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.ProjectPostsItemEnrollButton:hover {
+    filter: brightness(1.2);
+}
+
+.ProjectPostsItemEnrollButton svg {
+    fill: var(--text-color);
+    width: 20px;
+    height: 20px;
 }

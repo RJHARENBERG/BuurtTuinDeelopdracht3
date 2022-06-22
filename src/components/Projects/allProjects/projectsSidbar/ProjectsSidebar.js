@@ -21,7 +21,7 @@ function ProjectsSidebar(props) {
                         ut labore et dolore magna aliqua. Ut enim ad minim veniam
                     </p>
                     <div className={style.ProjectsSidebarItem}>
-                        <span className={style.ProjectsSidebarTitle}>Soort projecten</span>
+                        <span className={style.ProjectsSidebarTitle}>Locatie projecten</span>
                         <ul className={style.ProjectsSidebarList}>
                             <li className={style.ProjectsSidebarListItem}>Boomgaard</li>
                             <li className={style.ProjectsSidebarListItem}>Kruidentuin</li>

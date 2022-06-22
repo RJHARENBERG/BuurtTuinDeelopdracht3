@@ -7,6 +7,7 @@ import axios from "axios";
 function HomePageAddProfile(props) {
     const {register, handleSubmit, formState: {errors}} = useForm()
     const [addSucces, toggleAddSuccess] = useState(false);
+
     const onFormSubmit = data => {
         console.log(data)
         axios

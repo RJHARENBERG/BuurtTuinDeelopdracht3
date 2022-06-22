@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import style from "./ProjectPostsItem.module.css"
 import axios from "axios";
+import {FaPlus} from "react-icons/fa";
 
 function ProjectPostsItem(props) {
     const [project, setProject] = useState([]);
@@ -9,7 +10,6 @@ function ProjectPostsItem(props) {
         async function fetchStudents() {
             try {
                 const response = await axios.get('http://localhost:8080/allProjects');
-                // Plaats alle studenten in de state zodat we het op de pagina kunnen gebruiken
                 setProject(response.data);
                 console.log(response.data);
             } catch (e) {
@@ -44,6 +44,7 @@ function ProjectPostsItem(props) {
                     </div>
                 )
             })}
+            <button className={style.ProjectPostsItemEnrollButton}><FaPlus/></button>
         </>
     );
 }

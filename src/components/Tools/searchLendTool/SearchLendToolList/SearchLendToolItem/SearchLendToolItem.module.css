@@ -1,6 +1,13 @@
+
+.SearchLendToolOwnerItem{
+   /*background-color: var(--gray-background);*/
+    margin-bottom: 25px;
+
+}
+
 .SearchLendToolItem {
     border: 1px solid var(--itum-border);
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -51,14 +58,14 @@
     height: var(--button-size);
     border-radius: 50%;
     padding: 5px;
-    margin: 2px;
+    margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: filter 300ms;
 
     position: absolute;
-    right: -25px;
+    z-index: 1;
 }
 .SearchLendToolLendAddButton:hover {
     filter: brightness(1.2);

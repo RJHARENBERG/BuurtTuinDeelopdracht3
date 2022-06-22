@@ -22,6 +22,7 @@
     background-color: var(--black-background);
     color: var(--text-color);
     border-radius: 10px;
+
 }
 
 .ProjectsSidebarTitle{
@@ -49,6 +50,7 @@
 .ProjectsSidebarList{
     list-style: none;
     margin-bottom: 30px;
+
 }
 
 .ProjectsSidebarListItem{

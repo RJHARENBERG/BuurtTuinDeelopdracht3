@@ -56,14 +56,6 @@ function MyToolsList(props) {
                     </div>
                     <div className={style.MyToolsListResult}>
                         <MyToolsItem/>
-                        <MyToolsItem/>
-                        <MyToolsItem/>
-                        <MyToolsItem/>
-                        <MyToolsItem/>
-                        <MyToolsItem/>
-                        <MyToolsItem/>
-                        <MyToolsItem/>
-                        <MyToolsItem/>
                     </div>
                 </div>
             </div>

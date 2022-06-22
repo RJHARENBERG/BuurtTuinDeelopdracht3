@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import style from "./homePageLogin.module.css"
 import {useForm} from "react-hook-form";
 import {AiOutlineLogin} from "react-icons/ai";
 import {FaRegAddressCard} from "react-icons/fa";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
+import {AuthContext} from "../../../context/AuthContext";
 
 function HomePageLogin(props) {
     const {register, handleSubmit, formState: {errors}} = useForm()
+    const {login} = useContext(AuthContext);
 
     const onFormSubmit = data => {
         console.log(data)
@@ -15,9 +17,11 @@ function HomePageLogin(props) {
             .post(
                 'http://localhost:8080/authenticate',
                 data,
-                { headers: { 'Content-Type': 'application/json' }}
-            )
-            .then(response => {console.log(response.data)})
+                {headers: {'Content-Type': 'application/json'}}
+            ).then(response => {
+                console.log(response.data.jwt)
+            login(response.data.jwt)
+            })
             .catch(error => {console.log(error.data)});
     };
 
@@ -51,7 +55,7 @@ function HomePageLogin(props) {
                                 <label className={style.HomePageLoginLabel}>
                                     Wachtwoord
                                 </label>
-                                {errors.password &&
+                                {errors.paswoord &&
                                     <p className={style.MyToolsAddFormError}>{errors.password.message}</p>}
                                 <input
                                     type="password"
