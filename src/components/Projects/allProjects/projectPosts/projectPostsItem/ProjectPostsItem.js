@@ -9,7 +9,7 @@ function ProjectPostsItem(props) {
     useEffect(() => {
         async function fetchStudents() {
             try {
-                const response = await axios.get('http://localhost:8080/allProjects');
+                const response = await axios.get('http://localhost:8080/projects/allProjects');
                 setProject(response.data);
                 console.log(response.data);
             } catch (e) {

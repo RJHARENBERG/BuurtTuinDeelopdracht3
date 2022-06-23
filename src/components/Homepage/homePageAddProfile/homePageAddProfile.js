@@ -12,7 +12,7 @@ function HomePageAddProfile(props) {
         console.log(data)
         axios
             .post(
-                'http://localhost:8080/addUser',
+                'http://localhost:8080/users/addUser',
                 data,
                 { headers: { 'Content-Type': 'application/json' }}
             )

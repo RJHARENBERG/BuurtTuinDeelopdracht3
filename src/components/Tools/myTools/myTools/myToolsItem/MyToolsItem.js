@@ -11,8 +11,15 @@ function MyToolsItem(props) {
 
     useEffect(() => {
         async function fetchStudents() {
+            const token = localStorage.getItem('token');
+            const username = localStorage.getItem('username');
             try {
-                const response = await axios.get('http://localhost:8080/findUserByUsername/user');
+                const response = await axios.get(`http://localhost:8080/users/findUserByUsername/${username}`,{
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    }
+                });
                 setUser(response.data);
                 console.log(response.data);
                 setTools(response.data.tools)

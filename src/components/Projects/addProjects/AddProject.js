@@ -15,7 +15,7 @@ function AddProject(props) {
         console.log(data)
         axios
             .post(
-                'http://localhost:8080/addProject',
+                'http://localhost:8080/projects/addProject',
                 data,
                 {headers: {'Content-Type': 'application/json'}}
             )
