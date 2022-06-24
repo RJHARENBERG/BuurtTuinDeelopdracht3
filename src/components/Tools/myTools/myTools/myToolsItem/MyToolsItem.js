@@ -1,21 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import style from "./MyToolsItem.module.css"
 import {FaMinus, FaPlus} from "react-icons/fa";
 
 import axios from "axios";
 
+import {AuthContext} from "../../../../../context/AuthContext";
+
 function MyToolsItem(props) {
 
     const [user, setUser] = useState([]);
     const [tools, setTools] = useState([]);
+    const {user : {username}}= useContext(AuthContext)
 
     useEffect(() => {
-        async function fetchStudents() {
+        async function fetchMyToolsItem() {
             const token = localStorage.getItem('token');
-            const username = localStorage.getItem('username');
             console.log(username)
             try {
-                const response = await axios.get(`http://localhost:8080/users/findUserByUsername/user`,{
+                const response = await axios.get(`http://localhost:8080/users/findUserByUsername/${username}`,{
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${token}`,
@@ -30,7 +32,7 @@ function MyToolsItem(props) {
             }
         }
 
-        fetchStudents();
+        fetchMyToolsItem();
     }, []);
 
     return (

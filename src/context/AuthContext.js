@@ -66,7 +66,6 @@ function AuthContextProvider({ children }) {
         const decodedToken = jwtDecode(token)
         console.log(decodedToken)
         localStorage.setItem("token", token);
-        localStorage.setItem("exp",decodedToken.exp)
         console.log("De gebruiker is ingelogd!");
         toggleAuth({
             ...auth,
