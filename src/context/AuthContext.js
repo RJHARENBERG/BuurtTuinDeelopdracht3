@@ -17,9 +17,12 @@ function AuthContextProvider({ children }) {
 
     useEffect(()=>{
         const token = localStorage.getItem("token");
+        const exp = localStorage.getItem("exp");
+        console.log(exp)
+        let currentDate = new Date();
+        console.log(currentDate.getTime())
 
-        //hier moet nog gechekt worden of de oude token geldig is met een velid bolion zodat je hier onder if(token && valid) kan doen
-        if (token){
+        if (token && exp * 1000 < currentDate.getTime()){
             async function getUserData(){
                 const decodedToken = jwtDecode(token)
                 try {
@@ -63,6 +66,7 @@ function AuthContextProvider({ children }) {
         const decodedToken = jwtDecode(token)
         console.log(decodedToken)
         localStorage.setItem("token", token);
+        localStorage.setItem("exp",decodedToken.exp)
         console.log("De gebruiker is ingelogd!");
         toggleAuth({
             ...auth,

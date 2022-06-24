@@ -13,8 +13,9 @@ function MyToolsItem(props) {
         async function fetchStudents() {
             const token = localStorage.getItem('token');
             const username = localStorage.getItem('username');
+            console.log(username)
             try {
-                const response = await axios.get(`http://localhost:8080/users/findUserByUsername/${username}`,{
+                const response = await axios.get(`http://localhost:8080/users/findUserByUsername/user`,{
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${token}`,

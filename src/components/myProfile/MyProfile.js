@@ -12,7 +12,7 @@ function MyProfile(props) {
     useEffect(() => {
         async function fetchUser() {
             try {
-                const response = await axios.get('http://localhost:8080/findUserByUsername/user');
+                const response = await axios.get('http://localhost:8080/users/findUserByUsername/user');
                 // Plaats alle studenten in de state zodat we het op de pagina kunnen gebruiken
                 setUser(response.data);
                 console.log(response.data);
