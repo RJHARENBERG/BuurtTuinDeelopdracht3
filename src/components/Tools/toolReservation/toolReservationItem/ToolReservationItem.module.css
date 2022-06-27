@@ -1,0 +1,68 @@
+.ToolReservationItemContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.ToolReservationItemWrapper{
+    flex-direction: column;
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+}
+
+.ToolReservationIteView{
+    flex: 1;
+    flex-direction: row;
+    background-color: orange;
+    padding: 20px;
+    border-radius: 10px;
+    height: max-content;
+}
+
+.ToolReservationItem{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0px 25px 40px 25px;
+}
+.ToolReservationItemImg{
+    width: 300px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.ToolReservationItemTool{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 300px;
+}
+
+.ToolReservationItemLendData{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    margin-left: 20px;
+}
+
+.ToolReservationItemDate{
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

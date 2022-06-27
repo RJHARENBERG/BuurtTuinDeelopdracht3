@@ -5,18 +5,16 @@ import {AuthContext} from "../../../../context/AuthContext";
 
 function ToolReservationItem(props) {
 
-    const [userData, setUserData] = useState({});
-    const {user : {username}}= useContext(AuthContext)
-
-    console.log(userData.firstName)
+    const [userData, setUserData] = useState([]);
+    const {user: {username}} = useContext(AuthContext)
+    const {tools} = userData
 
     useEffect(() => {
         async function fetchToolReservationItem() {
             const token = localStorage.getItem('token');
-
             console.log(username)
             try {
-                const response = await axios.get(`http://localhost:8080/users/findUserByUsername/${username}`,{
+                const response = await axios.get(`http://localhost:8080/users/findUserByUsername/${username}`, {
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${token}`,
@@ -28,22 +26,60 @@ function ToolReservationItem(props) {
                 console.error(e);
             }
         }
-
         fetchToolReservationItem();
     }, []);
 
+    const onDelete = data => {
+        const token = localStorage.getItem('token');
+        axios
+            .post(
+                `http://localhost:8080/reservations/deleteReservationById/${tools.id}`,
+                {headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`}}
+            )
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log(error.data)
+            });
+    };
+
     return (
         <>
-            {userData && userData.map((user) => {
-                return  <div className={style.ToolReservationItem}>
-                    <img
-                        className={style.ToolReservationItemImg}
-                        src="https://images.unsplash.com/photo-1611288870280-4a322b8ec7ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fHRvb2xzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"            alt=""
-                    />
-                    <h1>{}</h1>
-                </div>
-            })}
+            <div className={style.ToolReservationItemContainer}>
+                <div className={style.ToolReservationItemWrapper}>
 
+                    {tools && tools.map((tools) => {
+                        return (
+                            <div className={style.ToolReservationIteView}>
+                                <div className={style.ToolReservationItem} key={tools.id}>
+                                    <div className={style.ToolReservationItemTool}>
+                                        <img
+                                            className={style.ToolReservationItemImg}
+                                            src="https://images.unsplash.com/photo-1611288870280-4a322b8ec7ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fHRvb2xzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                                            alt=""
+                                        />
+                                        <h1>{tools.toolName}</h1>
+                                    </div>
+                                    <div className={style.ToolReservationItemLendData}>
+                                        {tools.reservations.map((reservations) => {
+                                            return (
+                                                <div className={style.ToolReservationItemDate} key={reservations.id}>
+                                                    <h1>{reservations.borrowerId}</h1>
+                                                    <span>{reservations.startDate}</span>
+                                                    <span>{reservations.endDateDate}</span>
+                                                    <button onClick={onDelete}>delete</button>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+
+                </div>
+            </div>
         </>
     );
 }
