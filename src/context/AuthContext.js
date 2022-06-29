@@ -2,6 +2,7 @@ import React, {createContext, useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
+import isTokenValid from "../helpers/isTokenValid";
 
 
 export const AuthContext = createContext({});
@@ -17,12 +18,9 @@ function AuthContextProvider({ children }) {
 
     useEffect(()=>{
         const token = localStorage.getItem("token");
-        const exp = localStorage.getItem("exp");
-        console.log(exp)
-        let currentDate = new Date();
-        console.log(currentDate.getTime())
 
-        if (token && exp * 1000 < currentDate.getTime()){
+        if (token && isTokenValid(token)){
+
             async function getUserData(){
                 const decodedToken = jwtDecode(token)
                 try {

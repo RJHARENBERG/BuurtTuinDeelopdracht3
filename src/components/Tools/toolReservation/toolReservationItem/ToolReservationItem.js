@@ -31,10 +31,13 @@ function ToolReservationItem(props) {
 
     const onDelete = data => {
         const token = localStorage.getItem('token');
+        console.log(data)
+        console.log(token)
         axios
-            .post(
-                `http://localhost:8080/reservations/deleteReservationById/${tools.id}`,
-                {headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`}}
+            .delete(
+                `http://localhost:8080/reservations/deleteReservationById/${data}`,
+                {headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`}},
+                {}
             )
             .then(response => {
                 console.log(response.data)
@@ -51,8 +54,8 @@ function ToolReservationItem(props) {
 
                     {tools && tools.map((tools) => {
                         return (
-                            <div className={style.ToolReservationIteView}>
-                                <div className={style.ToolReservationItem} key={tools.id}>
+                            <div className={style.ToolReservationIteView} key={tools.id}>
+                                <div className={style.ToolReservationItem} >
                                     <div className={style.ToolReservationItemTool}>
                                         <img
                                             className={style.ToolReservationItemImg}
@@ -68,7 +71,7 @@ function ToolReservationItem(props) {
                                                     <h1>{reservations.borrowerId}</h1>
                                                     <span>{reservations.startDate}</span>
                                                     <span>{reservations.endDateDate}</span>
-                                                    <button onClick={onDelete}>delete</button>
+                                                    <button onClick={()=>onDelete(reservations.id)}>delete</button>
                                                 </div>
                                             )
                                         })}
@@ -77,7 +80,6 @@ function ToolReservationItem(props) {
                             </div>
                         )
                     })}
-
                 </div>
             </div>
         </>

@@ -151,7 +151,7 @@ function DropdownMenu() {
                     <Link to="/myOldProjects">
                         <DropdownItem leftIcon={<FaRegCalendarTimes/>}>Mijn oude projecten</DropdownItem>
                     </Link><Link to="/addProject">
-                        <DropdownItem leftIcon={<FaRegCalendarTimes/>}>Maak een project</DropdownItem>
+                        <DropdownItem leftIcon={<FaRegCalendarTimes/>}>New project</DropdownItem>
                     </Link>
                 </div>
             </CSSTransition>

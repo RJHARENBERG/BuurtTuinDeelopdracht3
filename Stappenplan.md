@@ -3,16 +3,16 @@
 
 Stappen plan:
 mappen:
-    [] assert
-    [] components
+    [v] assert
+    [v] components
 
 assert:
-    [] foto's
+    [v] foto's
 componenten:
-    [] homepage
-    [] Navbar
-    [] inlog
-    [] makeProfile
+    [v] homepage
+    [v] Navbar
+    [v] inlog
+    [v] makeProfile
     [] userDashboard 
     [] Tools
         [] addTool

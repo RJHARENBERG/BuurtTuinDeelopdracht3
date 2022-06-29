@@ -48,12 +48,14 @@ function SearchLendToolItem(props) {
             {users.map((user) => {
                 return (
                     <div className={style.SearchLendToolOwnerItem} key={user.id}>
+                        <div className={style.SearchLendToolOwnerInfo}>
                         <span className={style.SearchLendToolOwner}>
-                            Owner: {user.firstName}
+                            Eigenaar: {user.firstName}
                         </span>
                         <span className={style.SearchLendToolOwnerAdres}>
                             Adres: {user.streetName} {user.houseNumber}
                         </span>
+                        </div>
                             {user.tools.map((tool) => {
                                 return (
                                     <div key={tool.id}>

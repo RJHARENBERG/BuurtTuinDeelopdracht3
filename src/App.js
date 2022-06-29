@@ -71,7 +71,7 @@ function App() {
                         {isAuth ? <AddProject /> : <Redirect to="/" />}
                     </Route>
                 </Switch>
-                <Footer/>
+                {/*<Footer/>*/}
         </>
     );
 }
