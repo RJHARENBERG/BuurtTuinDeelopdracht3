@@ -53,6 +53,16 @@
     gap: 20px
 }
 
+.ToolReservationItemDelete{
+    background-color: orange;
+    border: none;
+    cursor: pointer;
+}
+
+.ToolReservationItemDelete svg{
+    height: 20px;
+    width: 20px;
+}
 
 
 

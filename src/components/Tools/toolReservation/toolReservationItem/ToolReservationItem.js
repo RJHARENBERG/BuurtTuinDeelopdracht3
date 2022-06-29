@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import style from "./ToolReservationItem.module.css"
 import axios from "axios";
 import {AuthContext} from "../../../../context/AuthContext";
+import {FaRegTrashAlt} from "react-icons/fa";
 
 function ToolReservationItem(props) {
 
@@ -71,7 +72,7 @@ function ToolReservationItem(props) {
                                                     <h1>{reservations.borrowerId}</h1>
                                                     <span>{reservations.startDate}</span>
                                                     <span>{reservations.endDateDate}</span>
-                                                    <button onClick={()=>onDelete(reservations.id)}>delete</button>
+                                                    <button  className={style.ToolReservationItemDelete} onClick={()=>onDelete(reservations.id)}><FaRegTrashAlt/></button>
                                                 </div>
                                             )
                                         })}

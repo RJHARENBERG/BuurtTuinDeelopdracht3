@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import style from "./MyProfile.module.css"
-import {FaRegUserCircle} from "react-icons/fa";
+import {FaRegTrashAlt, FaRegUserCircle} from "react-icons/fa";
 import {RiPlayListAddFill} from "react-icons/ri";
 import ProjectsSidebar from "../Projects/allProjects/projectsSidbar/ProjectsSidebar";
 import axios from "axios";
@@ -30,8 +30,8 @@ function MyProfile(props) {
             <div className={style.MyProfileWrapper}>
 
                 <div className={style.MyProfileTitle}>
-                    <span className={style.MyProfileUpdateTitle}>Update je profiel</span>
-                    <span className={style.MyProfileDeleteTitle}>Verwijder je profiel</span>
+                    <span className={style.MyProfileUpdateTitle}>Profiel</span>
+                    <span className={style.MyProfileDeleteTitle}><FaRegTrashAlt/></span>
                 </div>
 
                 <form className={style.MyProfileForm}>
