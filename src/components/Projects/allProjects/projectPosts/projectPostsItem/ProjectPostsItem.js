@@ -7,6 +7,7 @@ function ProjectPostsItem(props) {
     const [project, setProject] = useState([]);
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
         async function allProjects() {
             try {
                 const response = await axios.get('http://localhost:8080/projects/allProjects');

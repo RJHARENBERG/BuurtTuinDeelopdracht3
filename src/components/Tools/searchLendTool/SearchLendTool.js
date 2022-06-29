@@ -10,5 +10,4 @@ function SearchLendTool(props) {
     );
 }
 
-export default SearchLendTool
-;
+export default SearchLendTool;

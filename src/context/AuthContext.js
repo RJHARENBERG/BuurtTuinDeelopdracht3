@@ -1,104 +1,90 @@
-import React, {createContext, useEffect, useState} from 'react';
-import {useHistory} from "react-router-dom";
-import jwtDecode from "jwt-decode";
-import axios from "axios";
-import isTokenValid from "../helpers/isTokenValid";
-
+import React, { createContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
+import axios from 'axios';
+import isTokenValid from '../helpers/isTokenValid';
 
 export const AuthContext = createContext({});
 
 function AuthContextProvider({ children }) {
-
-    const [auth, toggleAuth] = useState({
-        isAut: false,
-        user:null,
-        status: "pending"
+    const [isAuth, toggleIsAuth] = useState({
+        isAuth: false,
+        user: null,
+        status: 'pending',
     });
-    const history = useHistory()
+    const history = useHistory();
+    useEffect(() => {
+        const token = localStorage.getItem('token');
 
-    useEffect(()=>{
-        const token = localStorage.getItem("token");
-
-        if (token && isTokenValid(token)){
-
-            async function getUserData(){
-                const decodedToken = jwtDecode(token)
-                try {
-                    const response = await axios.get(`http://localhost:8080/findUserByUsername/${decodedToken.sub}`,{
-                        headers: {
-                            'Content-Type': 'application/json',
-                            Authorization: `Bearer ${token}`,
-                        }
-                    })
-                    console.log(response.data)
-                    toggleAuth({
-                        isAut: true,
-                        user:{
-                            username: response.data.username,
-                        },
-                        status: "done",
-                    })
-                }catch (e){
-                    console.log(e)
-                    toggleAuth({
-                      ...auth,
-                        status: 'error',
-                    });
-                    localStorage.clear()
-                    console.log(e)
-                }
-            }
-            getUserData()
-        }else {
-            toggleAuth({
-               ...auth,
-                status: "done",
+        if (token && isTokenValid(token)) {
+            const decoded = jwt_decode(token);
+            fetchUserData(decoded.sub, token);
+        } else {
+            toggleIsAuth({
+                isAuth: false,
+                user: null,
+                status: 'done',
             });
         }
-    },[])
+    }, []);
 
-
-    function login(token){
-
-        console.log(token)
-        const decodedToken = jwtDecode(token)
-        console.log(decodedToken)
-        localStorage.setItem("token", token);
-        console.log("De gebruiker is ingelogd!");
-        toggleAuth({
-            ...auth,
-            isAut: true,
-            user:{
-              username: decodedToken.sub
-            } ,
-            status: "done",
-        });
-        history.push("/allProjects");
+    function login(JWT) {
+        localStorage.setItem('token', JWT);
+        const decoded = jwt_decode(JWT);
+        fetchUserData(decoded.sub, JWT, '/allProjects');
     }
-
-    function logout(){
-        console.log("De gebruiker is uitgelogd!");
-        toggleAuth({
-            isAut: false,
+    function logout() {
+        localStorage.clear();
+        toggleIsAuth({
+            isAuth: false,
             user: null,
-            status: "done",
+            status: 'done',
         });
-        history.push("/");
+        console.log('Gebruiker is uitgelogd!');
+        history.push('/');
     }
-
-    const contextData ={
-        isAuth: auth.isAut,
-        user: auth.user,
+    async function fetchUserData(id, token, redirectUrl) {
+        try {
+            const result = await axios.get(`http://localhost:8080/users/findUserByUsername/${id}`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            toggleIsAuth({
+                ...isAuth,
+                isAuth: true,
+                user: {
+                    username: result.data.username,
+                    email: result.data.email,
+                    id: result.data.id,
+                },
+                status: 'done',
+            });
+            if (redirectUrl) {
+                history.push(redirectUrl);
+            }
+        } catch (e) {
+            console.error(e);
+            toggleIsAuth({
+                isAuth: false,
+                user: null,
+                status: 'done',
+            });
+        }
+    }
+    const contextData = {
+        isAuth: isAuth.isAuth,
+        user: isAuth.user,
         login: login,
-        logout:logout,
+        logout: logout,
     };
-    return(
+
+    return (
         <AuthContext.Provider value={contextData}>
-            {auth.status === 'done' && children}
-            {auth.status === 'pending' && <p>Loading...</p>}
-            {auth.status === 'error' && <p>Error! Refresh de pagina!</p>}
+            {isAuth.status === 'done' ? children : <p>Loading...</p>}
         </AuthContext.Provider>
-    )
+    );
 }
 
 export default AuthContextProvider;
