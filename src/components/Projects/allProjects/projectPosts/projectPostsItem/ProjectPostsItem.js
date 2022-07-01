@@ -4,13 +4,14 @@ import axios from "axios";
 import {FaPencilAlt} from "react-icons/fa";
 
 import {AuthContext} from "../../../../../context/AuthContext";
+import {useHistory} from "react-router-dom";
 
 function ProjectPostsItem(props) {
     const [project, setProject] = useState([]);
     const {user : {username}}= useContext(AuthContext)
 
     useEffect(() => {
-        const source = axios.CancelToken.source();
+        // const source = axios.CancelToken.source();
         async function allProjects() {
             try {
                 const response = await axios.get('http://localhost:8080/projects/allProjects');
@@ -42,6 +43,11 @@ function ProjectPostsItem(props) {
             });
     };
 
+    let history = useHistory();
+    function toSingelPost(id){
+        console.log("klik", id)
+        history.push("/projectSingelPost", {projectId: id})
+    }
 
     return (
         <>
@@ -49,7 +55,7 @@ function ProjectPostsItem(props) {
                 return (
                     <div className={style.ProjectPostsItem} key={project.id}>
                         <button className={style.ProjectPostsItemEnrollButton} onClick={()=>onEnroll(project.id) }><FaPencilAlt/></button>
-                        <img
+                        <img onClick={() => toSingelPost(project.id)}
                             className={style.ProjectPostsItemImg}
                             src="https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
                             alt=""

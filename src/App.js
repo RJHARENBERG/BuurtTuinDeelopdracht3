@@ -61,6 +61,13 @@ function App() {
                     <Route path="/projectViewPost">
                         {isAuth ? <ProjectViewPost /> : <Redirect to="/" />}
                     </Route>
+
+                    <Route path="/projectSingelPost">
+                        {isAuth ? <ProjectSingelPost /> : <Redirect to="/" />}
+                    </Route>
+
+
+
                     <Route path="/myEnrolledProjects">
                         {isAuth ? <MyEnrolledProjects /> : <Redirect to="/" />}
                     </Route>
