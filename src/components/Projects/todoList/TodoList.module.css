@@ -1,0 +1,19 @@
+.TodoList{
+    flex: 1;
+    background-color: var(--black-background);
+    color: var(--text-color);
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.TodoListItems{
+    background-color: var(--white-background);
+    border-radius: 5px;
+    padding: 3px;
+    width: 90%;
+    margin: 5px;
+}

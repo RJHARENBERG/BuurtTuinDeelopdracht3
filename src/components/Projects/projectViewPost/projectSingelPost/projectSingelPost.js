@@ -13,7 +13,7 @@ function ProjectSingelPost(props) {
     const [post, setPost] = useState()
     console.log(projectId)
     let history = useHistory();
-    const {user : {username}}= useContext(AuthContext)
+    const {user: {username}} = useContext(AuthContext)
 
     useEffect(() => {
         async function singelPost() {
@@ -25,6 +25,7 @@ function ProjectSingelPost(props) {
                 console.error(e);
             }
         }
+
         singelPost();
     }, []);
 
@@ -52,10 +53,29 @@ function ProjectSingelPost(props) {
         axios
             .post(
                 `http://localhost:8080/enrolls/addEnroll/${data}`,
-                { tenderId: username },
+                {tenderId: username},
                 {headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`}}
             )
             .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log(error.data)
+            });
+    };
+
+    const onDeleteTodo = data => {
+        const token = localStorage.getItem('token');
+        console.log(data)
+        console.log(token)
+        axios
+            .delete(
+                `http://localhost:8080/todos/deleteTodoById/${data}`,
+                {headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`}}
+            )
+            .then(response => {
+                // history.push("/allProjects")
+                window.location.reload();
                 console.log(response.data)
             })
             .catch(error => {
@@ -72,33 +92,68 @@ function ProjectSingelPost(props) {
                         src="https://media.istockphoto.com/photos/planting-with-my-friend-picture-id1340726264?b=1&k=20&m=1340726264&s=170667a&w=0&h=BlurOk7yz_TTBXI85xB6UaoxwA9FqCvvehXJ3V1pBis="
                         alt=""
                     />
-                    <h1 className={style.ProjectSingelPostTitle}>
-                        {post.name}
-                        <div className={style.ProjectSingelPostEdit}>
-                            <i className={style.ProjectSingelPostIcon}
-                               onClick={() => onDelete(post.id)}>
-                                <RiDeleteBin2Line/>
-                            </i>
-                            <i className={style.ProjectSingelPostIcon}
-                               onClick={()=>onEnroll(post.id)}>
-                                <FaPencilAlt/>
-                            </i>
+                    <div className={style.ProjectSingelPostHeader}>
+                        <div className={style.ProjectSingelPostInfo}>
+                            <span className={style.ProjectSingelPostAuthor}>
+                                Locatie: {post.location}
+                            </span>
+                            <span className={style.ProjectSingelPostDate}>
+                                Datum: {post.date}
+                            </span>
                         </div>
-                    </h1>
-                    <div className={style.ProjectSingelPostInfo}>
-                 <span className={style.ProjectSingelPostAuthor}>Locatie:
-                     {post.location}
-                 </span>
-                        <span className={style.ProjectSingelPostDate}>Datum:
-                            {post.date}
-                 </span>
+                        <h1 className={style.ProjectSingelPostTitle}>
+                            {post.name}
+                        </h1>
+                        <div className={style.ProjectSingelPostEdit}>
+                            <button className={style.ProjectSingelPostIcon}
+                                    onClick={() => onDelete(post.id)}>
+                                <RiDeleteBin2Line/>
+                            </button>
+                            <button className={style.ProjectSingelPostIcon}
+                                    onClick={() => onEnroll(post.id)}>
+                                <FaPencilAlt/>
+                            </button>
+                        </div>
                     </div>
-                    <article className={style.ProjectSingelPostArticle}>
-                        {post.description}
-                    </article>
+                    <div className={style.ProjectSingelPostList}>
+                        <div className={style.EnrolledInProject}>
+                            <h2>Inschrijvingen</h2>
+                            {post.enrolls.map((enrolls) => {
+                                return (
+                                    <div className={style.EnrolledInProjectItems} key={enrolls.id}>
+                                        <h3>{enrolls.tenderId}</h3>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <article className={style.ProjectSingelPostArticle}>
+                            {post.description}
+                        </article>
+                        <div className={style.TodoList}>
+                            <h2>Taken</h2>
+                            {post.todos.map((todos) => {
+                                return (
+                                    <div className={style.TodoListItems} key={todos.id}>
+                                        <div className={style.TodoListItemTodo}>
+                                            <h3>{todos.nameTodo}</h3>
+                                            <button
+                                                onClick={() => onDeleteTodo(todos.id)}
+                                            >
+                                                <RiDeleteBin2Line/>
+                                            </button>
+                                        </div>
+                                        <div className={style.TodoListItemsDefinition}>
+                                            <h4>{todos.definition}</h4>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
-        );
+        )
+            ;
     }
 }
 

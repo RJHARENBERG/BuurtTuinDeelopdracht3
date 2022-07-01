@@ -4,7 +4,6 @@
 
 .ProjectSingelPostWrapper {
     padding: 20px;
-    padding-right: 0;
 }
 
 .ProjectSingelPostImg {
@@ -18,11 +17,16 @@
 .ProjectSingelPostTitle {
     text-align: center;
     margin: 10px;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 .ProjectSingelPostEdit {
     float: right;
+}
+
+.ProjectSingelPostEdit>button{
+    background-color: var(--white-background);
+    border: none;
 }
 
 .ProjectSingelPostEdit svg{
@@ -35,7 +39,6 @@
 }
 
 .ProjectSingelPostIcon:first-child{
-
     color: var(--error);
     cursor: pointer;
 }
@@ -44,11 +47,15 @@
     cursor: pointer;
 }
 
+.ProjectSingelPostHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
 .ProjectSingelPostInfo {
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    flex-direction: column;
     font-size: 20px;
     color: var(--accent-text);
 }
@@ -62,4 +69,96 @@
 .ProjectSingelPostArticle {
     font-size: 18px;
     line-height: 25px;
+    margin: 0px 20px 0px 20px;
+}
+
+.ProjectSingelPostList{
+    display: flex;
+    align-items: start;
+}
+
+.ProjectSingelPostList>article{
+    flex: 5;
+}
+
+.TodoList{
+    flex: 2;
+    background-color: var(--black-background);
+    color: var(--text-color);
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.TodoList>h2{
+    border-bottom: 2px solid var(--search-border);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.TodoListItems{
+    background-color: var(--white-background);
+    color: black;
+    border-radius: 5px;
+    padding: 3px;
+    width: 90%;
+    margin: 5px;
+}
+
+.EnrolledInProject{
+    flex: 1;
+    background-color: var(--black-background);
+    color: var(--text-color);
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+   padding: 20px 0px;
+}
+
+.EnrolledInProject>h2{
+    border-bottom: 2px solid var(--search-border);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+
+.EnrolledInProjectItems{
+    background-color: var(--white-background);
+    color: black;
+    border-radius: 5px;
+    padding: 3px;
+    width: 90%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.TodoListItemTodo{
+    display: flex;
+    justify-content: space-between;
+    margin: 6px;
+    flex-direction: row;
+}
+
+
+.TodoListItemTodo>button{
+    background-color: var(--white-background);
+    color: var(--error);
+    border: none;
+    cursor: pointer;
+}
+
+.TodoListItemTodo svg{
+    height: 25px;
+    width: 25px;
+}
+
+.TodoListItemsDefinition{
+margin: 6px;
 }

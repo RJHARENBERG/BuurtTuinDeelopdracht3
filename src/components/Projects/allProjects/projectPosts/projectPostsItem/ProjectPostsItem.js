@@ -68,9 +68,11 @@ function ProjectPostsItem(props) {
                             <span className={style.ProjectPostsItemCat}>Locatie: {project.location}</span>
                             <span className={style.ProjectPostsItemDate}>Datum: {project.date}</span>
                         </div>
+                        <div className={style.ProjectPostsIteminfo}>
                         <p className={style.ProjectPostsItemDescription}>
                             {project.description}
                         </p>
+                        </div>
                     </div>
                 )
             })}
