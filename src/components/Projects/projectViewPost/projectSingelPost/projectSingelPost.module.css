@@ -24,12 +24,12 @@
     float: right;
 }
 
-.ProjectSingelPostEdit>button{
+.ProjectSingelPostEdit > button {
     background-color: var(--white-background);
     border: none;
 }
 
-.ProjectSingelPostEdit svg{
+.ProjectSingelPostEdit svg {
     width: 40px;
     height: 40px;
 }
@@ -38,16 +38,17 @@
     margin-left: 20px;
 }
 
-.ProjectSingelPostIcon:first-child{
+.ProjectSingelPostIcon:first-child {
     color: var(--error);
     cursor: pointer;
 }
-.ProjectSingelPostIcon:last-child{
+
+.ProjectSingelPostIcon:last-child {
     color: var(--border);
     cursor: pointer;
 }
 
-.ProjectSingelPostHeader{
+.ProjectSingelPostHeader {
     display: flex;
     justify-content: space-between;
 }
@@ -72,16 +73,16 @@
     margin: 0px 20px 0px 20px;
 }
 
-.ProjectSingelPostList{
+.ProjectSingelPostList {
     display: flex;
     align-items: start;
 }
 
-.ProjectSingelPostList>article{
+.ProjectSingelPostList > article {
     flex: 5;
 }
 
-.TodoList{
+.TodoList {
     flex: 2;
     background-color: var(--black-background);
     color: var(--text-color);
@@ -93,13 +94,15 @@
     padding: 20px 0px;
 }
 
-.TodoList>h2{
+.TodoList > h2 {
     border-bottom: 2px solid var(--search-border);
     padding-bottom: 10px;
     margin-bottom: 10px;
+    width: 90%;
+    text-align: center;
 }
 
-.TodoListItems{
+.TodoListItems {
     background-color: var(--white-background);
     color: black;
     border-radius: 5px;
@@ -108,27 +111,28 @@
     margin: 5px;
 }
 
-.EnrolledInProject{
+.EnrolledInProject {
     flex: 1;
     background-color: var(--black-background);
     color: var(--text-color);
     border-radius: 5px;
-
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
-   padding: 20px 0px;
+    padding: 20px 0px;
 }
 
-.EnrolledInProject>h2{
+.EnrolledInProject > h2 {
     border-bottom: 2px solid var(--search-border);
     padding-bottom: 10px;
     margin-bottom: 10px;
+    width: 90%;
+    text-align: center;
 }
 
 
-.EnrolledInProjectItems{
+.EnrolledInProjectItems {
     background-color: var(--white-background);
     color: black;
     border-radius: 5px;
@@ -139,7 +143,7 @@
     flex-direction: column;
 }
 
-.TodoListItemTodo{
+.TodoListItemTodo {
     display: flex;
     justify-content: space-between;
     margin: 6px;
@@ -147,18 +151,66 @@
 }
 
 
-.TodoListItemTodo>button{
+.TodoListItemTodo > button {
     background-color: var(--white-background);
     color: var(--error);
     border: none;
     cursor: pointer;
 }
 
-.TodoListItemTodo svg{
+.TodoListItemTodo svg {
     height: 25px;
     width: 25px;
 }
 
-.TodoListItemsDefinition{
-margin: 6px;
+.TodoListItemsDefinition {
+    margin: 6px;
+}
+
+.TodoListAddTodo {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 6px;
+    border-radius: 5px;
+    border-bottom: 2px solid var(--search-border);
+    margin-bottom: 10px;
+}
+
+.TodoListAddTodoInput {
+    border-radius: 5px;
+    padding: 6px;
+    border: none;
+}
+
+.TodoListAddTodoInput:focus {
+    outline: none;
+}
+
+.TodoListAddTodoTextGroup {
+    border-radius: 5px;
+    padding: 6px;
+    border: none;
+}
+
+.TodoListAddTodoTextGroup:focus {
+    outline: none;
+}
+
+.TodoListAddTodo > button {
+    background-color: var(--black-background);
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.TodoListAddTodo svg {
+    width: 30px;
+    height: 30px;
+}
+
+.TodoListError{
+    color: red;
+    font-size: 20px;
 }

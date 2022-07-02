@@ -1,19 +1,21 @@
 import React, {useContext, useEffect, useState} from 'react';
 import style from "./projectSingelPost.module.css"
-import {RiDeleteBin2Line} from "react-icons/ri";
+import {RiDeleteBin2Line, RiPlayListAddFill} from "react-icons/ri";
 import {useHistory, useLocation} from "react-router-dom";
 import axios from "axios";
 import {FaPencilAlt} from "react-icons/fa";
 import {AuthContext} from "../../../../context/AuthContext";
+import {useForm} from "react-hook-form";
 
 function ProjectSingelPost(props) {
 
     let searchData = useLocation()
-    const [projectId, setProjectId] = useState(searchData.state.projectId)
+    const [projectId] = useState(searchData.state.projectId)
     const [post, setPost] = useState()
-    console.log(projectId)
     let history = useHistory();
     const {user: {username}} = useContext(AuthContext)
+    const {register, handleSubmit, formState: {errors}} = useForm()
+
 
     useEffect(() => {
         async function singelPost() {
@@ -83,6 +85,24 @@ function ProjectSingelPost(props) {
             });
     };
 
+    const onFormSubmit = data => {
+        console.log(data)
+        axios
+            .post(
+                `http://localhost:8080/todos/addTodo/${projectId}`,
+                data,
+                {headers: {'Content-Type': 'application/json'}}
+            )
+            .then(response => {
+                window.location.reload();
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log(error.data)
+            });
+    };
+
+
     if (post) {
         return (
             <div className={style.ProjectSingelPost} key={post.id}>
@@ -117,7 +137,7 @@ function ProjectSingelPost(props) {
                     </div>
                     <div className={style.ProjectSingelPostList}>
                         <div className={style.EnrolledInProject}>
-                            <h2>Inschrijvingen</h2>
+                            <h2>Deelnemers</h2>
                             {post.enrolls.map((enrolls) => {
                                 return (
                                     <div className={style.EnrolledInProjectItems} key={enrolls.id}>
@@ -131,6 +151,29 @@ function ProjectSingelPost(props) {
                         </article>
                         <div className={style.TodoList}>
                             <h2>Taken</h2>
+                            <form onSubmit={handleSubmit(onFormSubmit)} className={style.TodoListAddTodo}>
+                                {errors.nameTodo && <p className={style.TodoListError}>{errors.nameTodo.message}</p>}
+
+                                <input type="text"
+                                       placeholder="Taak..."
+                                       className={style.TodoListAddTodoInput}
+                                       autoFocus={true}
+                                       {...register("nameTodo", {
+                                           required: "Sorry maar er mist nog een taak naam"
+                                       })}
+                                />
+                                {errors.definition && <p className={style.TodoListError}>{errors.definition.message}</p>}
+                                <textarea
+                                    placeholder="Omschrijf de taak..."
+                                    type={"text"}
+                                    className={style.TodoListAddTodoTextGroup}
+                                    {...register("definition", {
+                                        required: "Sorry maar er mist nog een omschrijving"
+                                    })}
+                                >
+                                </textarea>
+                                <button><RiPlayListAddFill/></button>
+                            </form>
                             {post.todos.map((todos) => {
                                 return (
                                     <div className={style.TodoListItems} key={todos.id}>
