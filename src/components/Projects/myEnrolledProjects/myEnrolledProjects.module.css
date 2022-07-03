@@ -1,0 +1,67 @@
+.MyEnrolledProjects {
+}
+
+.MyEnrolledProjectsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.MyEnrolledProjectsWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+}
+
+.MyEnrolledProjectsSearch {
+    background-color: orange;
+    padding: 20px;
+    border-radius: 10px;
+    height: max-content;
+}
+
+.MyEnrolledProjectsSearch label {
+    font-size: 12px;
+}
+
+.MyEnrolledProjectsSearch span {
+    height: 30px;
+    padding: 5px;
+    background-color: var(--white-background);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.MyEnrolledProjectsSTitle {
+    font-size: 20px;
+    color: var(--border);
+    margin-bottom: 10px;
+}
+
+.MyEnrolledProjectsSearchText {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.MyEnrolledProjectsDate {
+}
+
+.MyEnrolledProjectsSearchButton {
+    padding: 10px;
+    background-color: var(--search-border);
+    color: var(--border);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.MyEnrolledProjectsSearchButton svg {
+    width: 20px;
+    height: 20px;
+}
+
+.MyEnrolledProjectsItems {
+}

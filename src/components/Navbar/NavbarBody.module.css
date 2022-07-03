@@ -93,6 +93,13 @@ a {
     width: 100%;
 }
 
+.dropdown h2{
+    border-bottom: 1px solid var(--search-border);
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
 .menuItem {
     height: 50px;
     display: flex;

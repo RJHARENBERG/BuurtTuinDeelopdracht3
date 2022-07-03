@@ -1,6 +1,6 @@
 import {
     FaTools, FaRegCalendarAlt, FaHandHolding, FaIdCard,
-    FaRegCalendarPlus, FaRegCalendarTimes
+    FaRegCalendarPlus, FaRegCalendarTimes, FaRegCalendarCheck
 } from 'react-icons/fa';
 import {AiOutlineHome, AiOutlineMessage} from "react-icons/ai";
 import {IoIosArrowBack, IoIosArrowDown, IoIosArrowForward} from "react-icons/io";
@@ -92,6 +92,7 @@ function DropdownMenu() {
                 unmountOnExit
                 onEnter={calcHeight}>
                 <div className={style.menu}>
+                    <h2>Menu</h2>
                     <Link to="myProfile">
                         <DropdownItem leftIcon={<FaIdCard/>}>Mijn Profiel</DropdownItem>
                     </Link>
@@ -118,7 +119,7 @@ function DropdownMenu() {
                 onEnter={calcHeight}>
                 <div className={style.menu}>
                     <DropdownItem goToMenu="main" leftIcon={<IoIosArrowBack/>}>
-                        <h2>menu</h2>
+                        <h2>Menu</h2>
                     </DropdownItem>
                     <Link to="/myTools">
                         <DropdownItem leftIcon={<FaTools/>}>Mijn gereedschap</DropdownItem>
@@ -146,12 +147,10 @@ function DropdownMenu() {
                         <DropdownItem leftIcon={<FaRegCalendarAlt/>}>Alle projecten</DropdownItem>
                     </Link>
                     <Link to="/myEnrolledProjects">
-                        <DropdownItem leftIcon={<FaRegCalendarPlus/>}>Mijn komende projecten</DropdownItem>
+                        <DropdownItem leftIcon={<FaRegCalendarCheck/>}>Mijn projecten</DropdownItem>
                     </Link>
-                    <Link to="/myOldProjects">
-                        <DropdownItem leftIcon={<FaRegCalendarTimes/>}>Mijn oude projecten</DropdownItem>
-                    </Link><Link to="/addProject">
-                        <DropdownItem leftIcon={<FaRegCalendarTimes/>}>New project</DropdownItem>
+                    <Link to="/addProject">
+                        <DropdownItem leftIcon={<FaRegCalendarPlus/>}>New project</DropdownItem>
                     </Link>
                 </div>
             </CSSTransition>

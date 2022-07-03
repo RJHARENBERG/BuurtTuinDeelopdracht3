@@ -95,7 +95,7 @@
 }
 
 .TodoList > h2 {
-    border-bottom: 2px solid var(--search-border);
+    border-bottom: 1px solid var(--search-border);
     padding-bottom: 10px;
     margin-bottom: 10px;
     width: 90%;
@@ -124,7 +124,7 @@
 }
 
 .EnrolledInProject > h2 {
-    border-bottom: 2px solid var(--search-border);
+    border-bottom: 1px solid var(--search-border);
     padding-bottom: 10px;
     margin-bottom: 10px;
     width: 90%;
@@ -173,7 +173,7 @@
     width: 90%;
     gap: 6px;
     border-radius: 5px;
-    border-bottom: 2px solid var(--search-border);
+    border-bottom: 1px solid var(--search-border);
     margin-bottom: 10px;
 }
 

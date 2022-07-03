@@ -22,7 +22,7 @@ function MyToolsList(props) {
                 <div className={style.MyToolsListWrapper}>
                     <div className={style.MyToolsListControl}>
                         <div className={style.MyToolsListSearch}>
-                            <h1 className={style.MyToolsListSearchTitle}>Search</h1>
+                            <h1 className={style.MyToolsListSearchTitle}>Zoeken</h1>
                             <div className={style.MyToolsListItem}>
                                 <label>Type gereedschap</label>
                                 <input type="text"
@@ -33,7 +33,8 @@ function MyToolsList(props) {
                                 <div className={style.MyToolsListItem}>
                                     <label>Reservering datum</label>
                                     <span onClick={() => setOpenDate(!openDate)}
-                                          className={style.MyToolsListSearchText}>
+                                          className={style.MyToolsListSearchText}
+                                    >
                             {`${format(date[0].startDate, "MM/dd/yyyy")}
                             to ${format(date[0].endDate, "MM/dd/yyyy")}`}
                             </span>
