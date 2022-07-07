@@ -16,8 +16,6 @@ function MessagesDashboard(props) {
             </div>
             </div>
         </>
-
-
     );
 }
 

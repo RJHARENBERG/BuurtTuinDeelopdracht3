@@ -85,8 +85,8 @@ function DisplayMessage(props) {
 
                             </div>
                             <div className={style.DisplayMessageResponse}>
-                                {message.responses.map((responses)=> { return(
-                                    <div key={responses.id}>
+                                {message.responses.map((responses,index)=> { return(
+                                    <div key={index}>
                                         <p>{responses.message}</p>
                                     </div>
                                 )})}
