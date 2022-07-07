@@ -9,7 +9,7 @@ function HomePageWelkom(props) {
                 <div className={style.HomePageWelkomWrapper}>
                     <h1>Welkom Buur!</h1>
                     <article className={style.HomePageWelkomPreface}>
-                        introductie text
+
                     </article>
                 </div>
             </div>

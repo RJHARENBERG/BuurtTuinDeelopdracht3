@@ -15,6 +15,11 @@
     gap: 20px;
 }
 
+
+.HomePageWelkomWrapper h1{
+    margin-top: 10px;
+    font-size: 50px;
+}
 .HomePageWelkomTitle{
     font-size: 20px;
 }

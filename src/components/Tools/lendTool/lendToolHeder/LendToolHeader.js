@@ -29,11 +29,6 @@ function LendToolHeader(props) {
         <>
             <div className={style.lenderToolHeader}>
                 <div className={style.lenderToolHeaderContainer}>
-                    <h1 className={style.lenderToolHeaderTitle}>Zoek en reserveer het gereedschap <FaTools/> van je
-                        buren </h1>
-                    <p className={style.lenderToolHeaderDescription}>Wil jij iets moois bouwen of een van de tuinen
-                        onderhouden en heb je
-                        niet het juiste gereedschap? Kijk dan of je het van een van je buren mag lenen!</p>
                     <div className={style.lenderToolHeaderSearch}>
                         <div className={style.lenderToolHeaderSearchItem}>
                             <FaTools className={style.lenderToolSearchIcon}/>
